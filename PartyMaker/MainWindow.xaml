@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PartyMaker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="560">
-    <Grid>
-        
+        Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
+    <Grid Background="#FFF1D8A2">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="25"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="TextName" Content="ПатиМейкер" HorizontalAlignment="Center" Margin="148,10,122.6,0" VerticalAlignment="Top" Height="61" Width="283" FontSize="48" Foreground="#FFFF7A00" BorderBrush="#FF804500" FontWeight="Bold" BorderThickness="0" FontFamily="Bahnschrift Light"/>
+        <TextBox x:Name="PeopleAmount" HorizontalAlignment="Left" Height="36" Margin="177,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Кол-во людей:" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="146" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
+        <TextBox x:Name="PeopleAmount_Copy" HorizontalAlignment="Left" Height="36" Margin="415,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
+        <Slider HorizontalAlignment="Center" Margin="30,150,30,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="500" Height="20"/>
+
     </Grid>
 </Window>

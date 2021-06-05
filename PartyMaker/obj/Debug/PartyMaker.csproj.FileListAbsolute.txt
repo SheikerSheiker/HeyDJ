@@ -1,0 +1,15 @@
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe.config
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\bin\Debug\PartyMaker.pdb
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csprojAssemblyReference.cache
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\MainWindow.g.cs
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\App.g.cs
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker_MarkupCompile.cache
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker_MarkupCompile.lref
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\MainWindow.baml
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.g.resources
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.Properties.Resources.resources
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cache
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
+C:\Users\leran\source\repos\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
