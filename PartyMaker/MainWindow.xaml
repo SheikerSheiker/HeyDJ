@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PartyMaker"
-        mc:Ignorable="d"
+        mc:Ignorable="d" 
         Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
     <Grid Background="#FFF1D8A2">
         <Button Content="Button" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click">
@@ -27,7 +27,50 @@
             </TextBox.Background>
         </TextBox>
         <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
-        <Slider HorizontalAlignment="Center" Margin="30,150,30,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="500" Height="20"/>
+        <Slider HorizontalAlignment="Center" Margin="30,150,30,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="500" Maximum="500" Minimum="100" SmallChange="1" x:Name="BeerSlider" Value="300">
+            <Slider.Template>
+                <ControlTemplate TargetType="{x:Type Slider}" >
+                    <Grid>
+                        <Polygon Points="0, 23, 500, 15, 500, 25, 0, 25">
+                            <Polygon.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <LinearGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </LinearGradientBrush.RelativeTransform>
+                                    <GradientStop Color="#FFFFEE00" Offset="0"/>
+                                    <GradientStop Color="#FFFF7700" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Polygon.Fill>
+                        </Polygon>
+                        <Track Grid.Row="1" x:Name="PART_Track">
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="Slider.IncreaseLarge" Opacity="0"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton   Command="Slider.DecreaseLarge" Opacity="0"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb>
+                                    <Thumb.Template>
+                                        <ControlTemplate TargetType="{x:Type Thumb}">
+                                            <Rectangle Width="30" Height="30">
+                                                <Rectangle.Fill>
+                                                    <ImageBrush ImageSource="beer.png"/>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Track.Thumb>
+                        </Track>
+                    </Grid>
+                </ControlTemplate>
+            </Slider.Template>
+        </Slider>
+
 
     </Grid>
 </Window>
