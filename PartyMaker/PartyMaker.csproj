@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>beer_ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -106,6 +109,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="beer3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alco2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="alco3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="beer_ico.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
