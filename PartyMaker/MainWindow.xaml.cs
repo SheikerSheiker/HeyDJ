@@ -37,6 +37,9 @@ namespace PartyMaker
 
         }
 
-        
+        private void BeerSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }

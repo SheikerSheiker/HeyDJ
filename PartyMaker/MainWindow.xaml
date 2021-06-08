@@ -31,7 +31,7 @@
 
 
         <!--BeerSlider-->
-        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0">
+        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0" ValueChanged="BeerSlider_ValueChanged">
             <Slider.Template>
                 <ControlTemplate TargetType="{x:Type Slider}" >
                     <Grid>
@@ -80,61 +80,61 @@
                         </Track>
                         <UniformGrid Columns="11" Width="460" VerticalAlignment="Center">
                             <UniformGrid.Effect>
-                                <DropShadowEffect BlurRadius="1" ShadowDepth="1"/>
+                                <DropShadowEffect BlurRadius="0" ShadowDepth="1"/>
                             </UniformGrid.Effect>
                             <TextBlock VerticalAlignment="Bottom" Text="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFEB01">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="0.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFE301">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFD901">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="1.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFCD01">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="2" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFBE01">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="2.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFAF00">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFA000">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="3.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8F01">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="4" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8200">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="4.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF7601">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                             <TextBlock VerticalAlignment="Bottom" Text="5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF6B00">
                                 <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
                         </UniformGrid>
