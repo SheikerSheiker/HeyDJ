@@ -23,11 +23,20 @@ namespace PartyMaker
         public MainWindow()
         {
             InitializeComponent();
+            TextBlock beerLiters = new TextBlock();
+            double x = 0;
+            for (; x <= 5; x += 0.5)
+            {
+                beerLiters.Inlines.Add($"{x}");
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        
     }
 }

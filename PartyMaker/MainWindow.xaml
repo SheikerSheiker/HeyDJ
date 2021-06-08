@@ -27,25 +27,37 @@
             </TextBox.Background>
         </TextBox>
         <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
-        <Slider HorizontalAlignment="Center" Margin="30,150,30,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Width="500" Maximum="500" Minimum="100" SmallChange="1" x:Name="BeerSlider" Value="300">
+
+
+
+        <!--BeerSlider-->
+        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0">
             <Slider.Template>
                 <ControlTemplate TargetType="{x:Type Slider}" >
                     <Grid>
-                        <Polygon Points="0, 23, 500, 15, 500, 25, 0, 25">
-                            <Polygon.Fill>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <LinearGradientBrush.RelativeTransform>
-                                        <TransformGroup>
-                                            <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                            <TranslateTransform/>
-                                        </TransformGroup>
-                                    </LinearGradientBrush.RelativeTransform>
-                                    <GradientStop Color="#FFFFEE00" Offset="0"/>
-                                    <GradientStop Color="#FFFF7700" Offset="1"/>
-                                </LinearGradientBrush>
-                            </Polygon.Fill>
-                        </Polygon>
-                        <Track Grid.Row="1" x:Name="PART_Track">
+                        <StackPanel VerticalAlignment="Top">
+                            <StackPanel.Effect>
+                                <BlurEffect Radius="1"/>
+                            </StackPanel.Effect>
+                            <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
+                                <Polygon.Effect>
+                                    <DropShadowEffect ShadowDepth="4" Direction="-135" BlurRadius="5"/>
+                                </Polygon.Effect>
+                                <Polygon.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FFFFEE00" Offset="0"/>
+                                        <GradientStop Color="#FFFF7700" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Polygon.Fill>
+                            </Polygon>
+                        </StackPanel>
+                        <Track Grid.Row="1" x:Name="PART_Track" Width="480" VerticalAlignment="Top">
                             <Track.IncreaseRepeatButton>
                                 <RepeatButton Command="Slider.IncreaseLarge" Opacity="0"/>
                             </Track.IncreaseRepeatButton>
@@ -56,9 +68,9 @@
                                 <Thumb>
                                     <Thumb.Template>
                                         <ControlTemplate TargetType="{x:Type Thumb}">
-                                            <Rectangle Width="30" Height="30">
+                                            <Rectangle Height="46" Width="61">
                                                 <Rectangle.Fill>
-                                                    <ImageBrush ImageSource="beer.png"/>
+                                                    <ImageBrush ImageSource="Picture/beer.png"/>
                                                 </Rectangle.Fill>
                                             </Rectangle>
                                         </ControlTemplate>
@@ -66,6 +78,99 @@
                                 </Thumb>
                             </Track.Thumb>
                         </Track>
+                        <UniformGrid Columns="11" Width="460" VerticalAlignment="Center">
+                            <UniformGrid.Effect>
+                                <DropShadowEffect BlurRadius="1" ShadowDepth="1"/>
+                            </UniformGrid.Effect>
+                            <TextBlock VerticalAlignment="Bottom" Text="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFEB01">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFE301">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFD901">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFCD01">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="2" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFBE01">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="2.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFAF00">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFA000">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="3.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8F01">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="4" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8200">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="4.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF7601">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF6B00">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="1"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </UniformGrid>
+
+                        <UniformGrid Columns="3" Width="480" VerticalAlignment="Top">
+                            <Image Source="beer1.png" Width="100">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="-50"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Source="beer2.png" Width="100">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="-15"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Source="beer3.png" Width="100">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="50"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </UniformGrid>
                     </Grid>
                 </ControlTemplate>
             </Slider.Template>
