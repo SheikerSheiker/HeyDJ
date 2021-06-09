@@ -4,30 +4,13 @@
 winexe
 C#
 .cs
-<<<<<<< max
-C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\
-=======
-<<<<<<< Updated upstream
-C:\Users\leran\Source\Repos\HeyDJ\PartyMaker\obj\Debug\
-=======
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\
->>>>>>> Stashed changes
->>>>>>> Auto stash before rebase of "origin/lera"
 PartyMaker
 none
 false
 DEBUG;TRACE
-<<<<<<< max
-C:\prog\kraken\HeyDJ\PartyMaker\App.xaml
-21247428840
-=======
-<<<<<<< Updated upstream
-C:\Users\leran\Source\Repos\HeyDJ\PartyMaker\App.xaml
-=======
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\App.xaml
->>>>>>> Stashed changes
-11151548125
->>>>>>> Auto stash before rebase of "origin/lera"
+21247428840
 
 6263970383
 131569487696
