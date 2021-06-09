@@ -7,26 +7,26 @@
         mc:Ignorable="d" 
         Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
     <Grid Background="#FFF1D8A2">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click">
+        <Button x:Name="ButtonCount" Content="Рассчитать" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click" Background="#FFF7BC05" BorderBrush="#FFEDEBE6" Foreground="#FFF74205" FontSize="24" FontFamily="Berlin Sans FB" FontWeight="Bold">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="25"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Label x:Name="TextName" Content="ПатиМейкер" HorizontalAlignment="Center" Margin="148,10,57.6,0" VerticalAlignment="Top" Height="61" Width="348" FontSize="48" Foreground="#FFFF7A00" BorderBrush="#FF804500" FontWeight="Bold" BorderThickness="0" FontFamily="Bahnschrift Light"/>
-        <TextBox x:Name="PeopleAmount" HorizontalAlignment="Left" Height="36" Margin="177,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20">
+        <Label x:Name="TextName" Content="ПатиМейкер" HorizontalAlignment="Center" Margin="128,10,113.6,0" VerticalAlignment="Top" Height="61" Width="312" FontSize="48" Foreground="#FFFF7A00" BorderBrush="#FF804500" FontWeight="Bold" BorderThickness="0" FontFamily="Berlin Sans FB"/>
+        <TextBox x:Name="PeopleAmount" HorizontalAlignment="Left" Height="36" Margin="177,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20" BorderBrush="White">
             <TextBox.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Кол-во людей:" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="146" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
-        <TextBox x:Name="PeopleAmount_Copy" HorizontalAlignment="Left" Height="36" Margin="415,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20">
+        <Label Content="Кол-во людей:" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="146" FontStretch="Condensed" FontFamily="Berlin Sans FB"/>
+        <TextBox x:Name="NoAlcoPeople" HorizontalAlignment="Left" Height="36" Margin="415,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20" BorderBrush="White">
             <TextBox.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"/>
             </TextBox.Background>
         </TextBox>
-        <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Bahnschrift Light"/>
+        <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Berlin Sans FB"/>
 
 
 
@@ -176,6 +176,140 @@
             </Slider.Template>
         </Slider>
 
+        <!--AlcoSlider-->
+        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1.5" Minimum="0" SmallChange="0.25" Value="0.75" LargeChange="0.25" TickFrequency="0.25" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 290, 0, 0" ValueChanged="BeerSlider_ValueChanged">
+            <Slider.Template>
+                <ControlTemplate TargetType="{x:Type Slider}" >
+                    <Grid>
+                        <StackPanel VerticalAlignment="Top">
+                            <StackPanel.Effect>
+                                <BlurEffect Radius="1"/>
+                            </StackPanel.Effect>
+                            <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
+                                <Polygon.Effect>
+                                    <DropShadowEffect ShadowDepth="4" Direction="-135" BlurRadius="5"/>
+                                </Polygon.Effect>
+                                <Polygon.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#FFF3A009" Offset="0"/>
+                                        <GradientStop Color="#FFF72910" Offset="1"/>
+                                        <GradientStop Color="#FFF3A009" Offset="0.389"/>
+                                    </LinearGradientBrush>
+                                </Polygon.Fill>
+                            </Polygon>
+                        </StackPanel>
+                        <Track Grid.Row="1" x:Name="PART_Track" Width="480" VerticalAlignment="Top">
+                            <Track.IncreaseRepeatButton>
+                                <RepeatButton Command="Slider.IncreaseLarge" Opacity="0"/>
+                            </Track.IncreaseRepeatButton>
+                            <Track.DecreaseRepeatButton>
+                                <RepeatButton   Command="Slider.DecreaseLarge" Opacity="0"/>
+                            </Track.DecreaseRepeatButton>
+                            <Track.Thumb>
+                                <Thumb>
+                                    <Thumb.Template>
+                                        <ControlTemplate TargetType="{x:Type Thumb}">
+                                            <Rectangle Height="60" Width="50" RenderTransformOrigin="0.5,0.5" >
+                                                <Rectangle.RenderTransform>
+                                                    <TransformGroup>
+                                                        <ScaleTransform/>
+                                                        <SkewTransform/>
+                                                        <RotateTransform/>
+                                                        <TranslateTransform Y="-10"/>
+                                                    </TransformGroup>
+                                                </Rectangle.RenderTransform>
+                                                <Rectangle.Fill>
+                                                    <ImageBrush ImageSource="alco.png"/>
+                                                </Rectangle.Fill>
+                                            </Rectangle>
+                                        </ControlTemplate>
+                                    </Thumb.Template>
+                                </Thumb>
+                            </Track.Thumb>
+                        </Track>
+                        <UniformGrid Columns="7" Width="500" VerticalAlignment="Center">
+                            <UniformGrid.Effect>
+                                <DropShadowEffect BlurRadius="0" ShadowDepth="1"/>
+                            </UniformGrid.Effect>
+                            <TextBlock VerticalAlignment="Bottom" Text="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0,25" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0,75" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF4820B">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF56C0C">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1,25" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF64E0E">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                        </UniformGrid>
+
+                        <UniformGrid Columns="3" Width="480" VerticalAlignment="Top">
+                            <Image Source="alco1.png" Width="100">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="-50"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Source="alco2.png" Width="90">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="-5"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Source="alco3.png" Width="80">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="80" X="50"/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                        </UniformGrid>
+                    </Grid>
+                </ControlTemplate>
+            </Slider.Template>
+        </Slider>
 
     </Grid>
 </Window>
