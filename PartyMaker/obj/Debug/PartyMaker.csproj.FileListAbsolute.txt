@@ -43,3 +43,5 @@ C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cac
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
+C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
+C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.baml

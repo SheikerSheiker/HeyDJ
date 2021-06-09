@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
         Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
     <Grid Background="#FFF1D8A2">
-        <Button x:Name="ButtonCount" Content="Рассчитать" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click" Background="#FFF7BC05" BorderBrush="#FFEDEBE6" Foreground="#FFF74205" FontSize="24" FontFamily="Berlin Sans FB" FontWeight="Bold">
+        <Button x:Name="ButtonCount" Content="Рассчитать" HorizontalAlignment="Left" Margin="177,587,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click" Background="#FFF7BC05" BorderBrush="#FFEDEBE6" Foreground="#FFF74205" FontSize="24" FontFamily="Berlin Sans FB" FontWeight="Bold">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="25"/>
@@ -310,6 +310,16 @@
                 </ControlTemplate>
             </Slider.Template>
         </Slider>
+        <TextBlock x:Name="Vodka" HorizontalAlignment="Left" Margin="34,468,0,0" TextWrapping="Wrap" Text="Водка" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="Whiskey" HorizontalAlignment="Left" Margin="34,497,0,0" TextWrapping="Wrap" Text="Виски" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="Сognac" HorizontalAlignment="Left" Margin="34,527,0,0" TextWrapping="Wrap" Text="Коньяк" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="VodkaPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,466,0,0" TextChanged="VodkaPrice_TextChanged"/>
+        <TextBox x:Name="WhiskeyPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,495,0,0" TextChanged="WhiskeyPrice_TextChanged"/>
+        <TextBox x:Name="CognacPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,525,0,0" TextChanged="CognacPrice_TextChanged"/>
+        <TextBox x:Name="VodkaPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,466,0,0" TextChanged="VodkaPeople_TextChanged"/>
+        <TextBox x:Name="WhiskeyPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,495,0,0" TextChanged="WhiskeyPeople_TextChanged"/>
+        <TextBox x:Name="CognacPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,525,0,0" TextChanged="CognacPeople_TextChanged"/>
+        <TextBlock x:Name="drunk" HorizontalAlignment="Left" Margin="35,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
 
     </Grid>
 </Window>
