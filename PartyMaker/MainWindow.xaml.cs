@@ -34,11 +34,12 @@ namespace PartyMaker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string[] arr = new string[3];
-            arr[0] = "Водка " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5)).ToString() + " " + VodkaPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5) * int.Parse(VodkaPrice.Text)).ToString();
-            arr[1] = "Виски " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5)).ToString() + " " + WhiskeyPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5) * int.Parse(WhiskeyPrice.Text)).ToString();
-            arr[2] = "Коньяк " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5)).ToString() + " " + CognacPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5) * int.Parse(CognacPrice.Text)).ToString();
-
+            string[] arr = new string[5];
+            arr[0] = "Пиво " + (Math.Ceiling(BeerSlider.Value * int.Parse(BeerPeople.Text) / 0.5)).ToString() + " " + BeerPrice.Text + " " + (Math.Ceiling(BeerSlider.Value * int.Parse(BeerPeople.Text) / 0.5) * int.Parse(BeerPrice.Text)).ToString();
+            arr[1] = "Сидо " + (Math.Ceiling(BeerSlider.Value * int.Parse(SeedrPeople.Text) / 0.5)).ToString() + " " + SeedrPrice.Text + " " + (Math.Ceiling(BeerSlider.Value * int.Parse(SeedrPeople.Text) / 0.5) * int.Parse(SeedrPrice.Text)).ToString();
+            arr[2] = "Водка " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5)).ToString() + " " + VodkaPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5) * int.Parse(VodkaPrice.Text)).ToString();
+            arr[3] = "Виски " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5)).ToString() + " " + WhiskeyPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5) * int.Parse(WhiskeyPrice.Text)).ToString();
+            arr[4] = "Коньяк " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5)).ToString() + " " + CognacPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5) * int.Parse(CognacPrice.Text)).ToString();
             Result result = new Result(arr);
             result.Show();
         }
