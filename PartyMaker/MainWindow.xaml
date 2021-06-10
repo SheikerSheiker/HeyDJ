@@ -193,7 +193,7 @@
             <UniformGrid x:Name="Beer2" Columns="3" Height="30" VerticalAlignment="Bottom">
                 <TextBlock x:Name="BeerName2" Text="Сидр" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF002E" VerticalAlignment="Center"></TextBlock>
                 <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice2_PreviewTextInput" TextChanged="BeerPrice2_TextChanged"></TextBox>
-                <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5"></TextBox>
+                <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5" PreviewTextInput="BeerCount2_PreviewTextInput" TextChanged="BeerCount2_TextChanged"></TextBox>
             </UniformGrid>
         </Grid>
 
