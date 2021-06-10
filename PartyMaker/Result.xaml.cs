@@ -19,15 +19,16 @@ namespace PartyMaker
     /// </summary>
     public partial class Result : Window
     {
-        public Result(List<Alco> allAlco, double alcoSliderValue)
+        public Result(List<Alco> allAlco, double alcoSliderValue, double beerSliderValue)
         {
             InitializeComponent();
 
             List<AlcoResult> results = new List<AlcoResult>();
             int total = 0;
+
             foreach (var item in allAlco)
             {
-                results.Add(item.TransformToResult(alcoSliderValue));
+                results.Add(item.TransformToResult(alcoSliderValue, beerSliderValue));
             }
             foreach (var item in results)
             {
@@ -36,6 +37,7 @@ namespace PartyMaker
 
             ListViewResults.ItemsSource = results;
             TotalPrice(total);
+            this.SizeToContent = SizeToContent.Height;
         }
 
         public void TotalPrice (int total) => TotalBlock.Text = $"Итоговая стоимость: {total:C0}";

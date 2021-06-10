@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
         Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
     <Grid Background="#FFF1D8A2">
-        <Button x:Name="ButtonCount" Content="Рассчитать" HorizontalAlignment="Left" Margin="177,587,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click" Background="#FFF7BC05" BorderBrush="#FFEDEBE6" Foreground="#FFF74205" FontSize="24" FontFamily="Berlin Sans FB" FontWeight="Bold">
+        <Button x:Name="ButtonCount" Content="Рассчитать" Click="Button_Click" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="200" Height="54" Background="#FFF7BC05" BorderBrush="Orange" Foreground="#FFF74205" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" BorderThickness="4,2">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="25"/>
@@ -176,8 +176,29 @@
             </Slider.Template>
         </Slider>
 
+        <Grid x:Name="GridBeer" Height="60" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-36"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <UniformGrid x:Name="Beer1" Columns="3" Height="30" VerticalAlignment="Top">
+                <TextBlock x:Name="BeerName1" Text="Пиво" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF5200" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="BeerPrice1" Margin="15, 5, 15, 5"></TextBox>
+                <TextBox x:Name="BeerCount1" Margin="25, 5, 5, 5"></TextBox>
+            </UniformGrid>
+            <UniformGrid x:Name="Beer2" Columns="3" Height="30" VerticalAlignment="Bottom">
+                <TextBlock x:Name="BeerName2" Text="Сидр" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF002E" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5"></TextBox>
+                <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5"></TextBox>
+            </UniformGrid>
+        </Grid>
+
         <!--AlcoSlider-->
-        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1" Minimum="0" SmallChange="0.1" Value="0.5" LargeChange="0.1" TickFrequency="0.1" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 290, 0, 0">
+        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1" Minimum="0" SmallChange="0.1" Value="0.5" LargeChange="0.1" TickFrequency="0.1" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 340, 0, 0">
             <Slider.Template>
                 <ControlTemplate TargetType="{x:Type Slider}" >
                     <Grid>
@@ -337,7 +358,7 @@
                     <ScaleTransform/>
                     <SkewTransform/>
                     <RotateTransform/>
-                    <TranslateTransform Y="160"/>
+                    <TranslateTransform Y="200"/>
                 </TransformGroup>
             </Grid.RenderTransform>
             <UniformGrid x:Name="Alco1" Columns="3" Height="30" VerticalAlignment="Top">

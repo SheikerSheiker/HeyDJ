@@ -30,6 +30,16 @@ namespace PartyMaker
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             List<Alco> allAlco = new List<Alco>();
+            if ((BeerName1.Text.Length != 0) && (BeerPrice1.Text.Length != 0) && (BeerCount1.Text.Length != 0))
+            {
+                Alco alco1 = new Alco { Name = BeerName1.Text, Price = int.Parse(BeerPrice1.Text), Count = int.Parse(BeerCount1.Text) };
+                allAlco.Add(alco1);
+            }
+            if ((BeerName2.Text.Length != 0) && (BeerPrice2.Text.Length != 0) && (BeerCount2.Text.Length != 0))
+            {
+                Alco alco1 = new Alco { Name = BeerName2.Text, Price = int.Parse(BeerPrice2.Text), Count = int.Parse(BeerCount2.Text) };
+                allAlco.Add(alco1);
+            }
             if ((Name1.Text.Length != 0) && (Price1.Text.Length != 0) && (Count1.Text.Length != 0))
             {
                 Alco alco1 = new Alco { Name = Name1.Text, Price = int.Parse(Price1.Text), Count = int.Parse(Count1.Text) };
@@ -47,7 +57,8 @@ namespace PartyMaker
             }
 
 
-            Result result = new Result(allAlco, AlcoSlider.Value);
+
+            Result result = new Result(allAlco, AlcoSlider.Value, BeerSlider.Value);
             result.Show();
         }
     }
