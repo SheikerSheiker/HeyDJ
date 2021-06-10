@@ -37,20 +37,6 @@ namespace PartyMaker
         public Result(List<Alco> allAlco, double alcoSliderValue, double beerSliderValue)
         {
             InitializeComponent();
-            List<Res> qwe = new List<Res>();
-            string[] str;
-            str = arr[0].Split(' ');
-            qwe.Add(new Res((str[0]), int.Parse(str[1]), int.Parse(str[2]), int.Parse(str[3]))); 
-            str = arr[1].Split(' ');
-            qwe.Add(new Res((str[0]), int.Parse(str[1]), int.Parse(str[2]), int.Parse(str[3])));
-            str = arr[2].Split(' ');
-            qwe.Add(new Res((str[0]), int.Parse(str[1]), int.Parse(str[2]), int.Parse(str[3])));
-            str = arr[3].Split(' ');
-            qwe.Add(new Res((str[0]), int.Parse(str[1]), int.Parse(str[2]), int.Parse(str[3])));
-            str = arr[4].Split(' ');
-            qwe.Add(new Res((str[0]), int.Parse(str[1]), int.Parse(str[2]), int.Parse(str[3])));
-            grid.ItemsSource = qwe;
-        }
 
             List<AlcoResult> results = new List<AlcoResult>();
             int total = 0;

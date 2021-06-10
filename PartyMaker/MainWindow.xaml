@@ -187,12 +187,12 @@
             </Grid.RenderTransform>
             <UniformGrid x:Name="Beer1" Columns="3" Height="30" VerticalAlignment="Top">
                 <TextBlock x:Name="BeerName1" Text="Пиво" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF5200" VerticalAlignment="Center"></TextBlock>
-                <TextBox x:Name="BeerPrice1" Margin="15, 5, 15, 5"></TextBox>
-                <TextBox x:Name="BeerCount1" Margin="25, 5, 5, 5"></TextBox>
+                <TextBox x:Name="BeerPrice1" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice1_PreviewTextInput" TextChanged="BeerPrice1_TextChanged"></TextBox>
+                <TextBox x:Name="BeerCount1" Margin="25, 5, 5, 5" PreviewTextInput="BeerCount1_PreviewTextInput" TextChanged="BeerCount1_TextChanged"></TextBox>
             </UniformGrid>
             <UniformGrid x:Name="Beer2" Columns="3" Height="30" VerticalAlignment="Bottom">
                 <TextBlock x:Name="BeerName2" Text="Сидр" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF002E" VerticalAlignment="Center"></TextBlock>
-                <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5"></TextBox>
+                <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice2_PreviewTextInput" TextChanged="BeerPrice2_TextChanged"></TextBox>
                 <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5"></TextBox>
             </UniformGrid>
         </Grid>
@@ -363,18 +363,18 @@
             </Grid.RenderTransform>
             <UniformGrid x:Name="Alco1" Columns="3" Height="30" VerticalAlignment="Top">
                 <TextBox x:Name="Name1" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price1" Margin="15, 5, 15, 5"></TextBox>
-                <TextBox x:Name="Count1" Margin="25, 5, 5, 5"></TextBox>
+                <TextBox x:Name="Price1" Margin="15, 5, 15, 5" PreviewTextInput="Price1_PreviewTextInput" TextChanged="Price1_TextChanged"></TextBox>
+                <TextBox x:Name="Count1" Margin="25, 5, 5, 5" PreviewTextInput="Count1_PreviewTextInput" TextChanged="Count1_TextChanged"></TextBox>
             </UniformGrid>
             <UniformGrid x:Name="Alco2" Columns="3" Height="30" VerticalAlignment="Center">
                 <TextBox x:Name="Name2" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price2" Margin="15, 5, 15, 5"></TextBox>
-                <TextBox x:Name="Count2" Margin="25, 5, 5, 5"></TextBox>
+                <TextBox x:Name="Price2" Margin="15, 5, 15, 5" PreviewTextInput="Price2_PreviewTextInput" TextChanged="Price2_TextChanged"></TextBox>
+                <TextBox x:Name="Count2" Margin="25, 5, 5, 5" PreviewTextInput="Count2_PreviewTextInput" TextChanged="Count2_TextChanged"></TextBox>
             </UniformGrid>
             <UniformGrid x:Name="Alco3" Columns="3" Height="30" VerticalAlignment="Bottom">
                 <TextBox x:Name="Name3" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price3" Margin="15, 5, 15, 5"></TextBox>
-                <TextBox x:Name="Count3" Margin="25, 5, 5, 5"></TextBox>
+                <TextBox x:Name="Price3" Margin="15, 5, 15, 5" PreviewTextInput="Price3_PreviewTextInput" TextChanged="Price3_TextChanged"></TextBox>
+                <TextBox x:Name="Count3" Margin="25, 5, 5, 5" PreviewTextInput="Count3_PreviewTextInput" TextChanged="Count3_TextChanged"></TextBox>
             </UniformGrid>
         </Grid>
 

@@ -26,7 +26,7 @@ namespace PartyMaker
         {
             InitializeComponent();
         }
-        
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             List<Alco> allAlco = new List<Alco>();
@@ -60,6 +60,97 @@ namespace PartyMaker
 
             Result result = new Result(allAlco, AlcoSlider.Value, BeerSlider.Value);
             result.Show();
+        }
+
+        private void BeerPrice1_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!char.IsDigit(e.Text, 0))
+                e.Handled = true;
+        }
+        private void BeerPrice1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(BeerPrice1.Text, out int a))
+                BeerPrice1.Text = "";
+        }
+
+        private void BeerPrice2_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void BeerPrice2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void BeerCount1_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void BeerCount1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Price1_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Price1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Price2_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Price2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Price3_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Price3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Count1_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Count1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Count2_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Count2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Count3_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+
+        }
+
+        private void Count3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
