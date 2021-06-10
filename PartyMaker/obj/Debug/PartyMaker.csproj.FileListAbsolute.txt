@@ -45,3 +45,5 @@ C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.baml
+D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
+D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\Result.baml

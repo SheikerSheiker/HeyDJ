@@ -19,16 +19,25 @@ namespace PartyMaker
     /// </summary>
     public partial class Result : Window
     {
-        public Result(string[] arr)
+        public Result(List<Alco> allAlco, double alcoSliderValue)
         {
             InitializeComponent();
 
+            List<AlcoResult> results = new List<AlcoResult>();
+            int total = 0;
+            foreach (var item in allAlco)
+            {
+                results.Add(item.TransformToResult(alcoSliderValue));
+            }
+            foreach (var item in results)
+            {
+                total += int.Parse(item.FullPrice);
+            }
 
+            ListViewResults.ItemsSource = results;
+            TotalPrice(total);
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        public void TotalPrice (int total) => TotalBlock.Text = $"Итоговая стоимость: {total:C0}";
     }
 }
