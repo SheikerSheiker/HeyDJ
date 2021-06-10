@@ -1,4 +1,4 @@
-﻿<Window x:Class="PartyMaker.Result"
+﻿<Window x:Name="ResultWin" x:Class="PartyMaker.Result"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,24 +6,37 @@
         xmlns:local="clr-namespace:PartyMaker"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Результат" Height="540" Width="420" ResizeMode="NoResize">
+        Title="Результат" Height="540" Width="420" ResizeMode="NoResize" Background="#FFF1D8A2">
     <Grid>
+        <Rectangle Fill="#FFFFD374"/>
         <StackPanel>
-        <ListView x:Name="ListViewResults" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="16" Height="auto">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Напиток" Width="auto"></GridViewColumn>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=CountBottle}" Header="Кол-во бутылок" Width="auto"></GridViewColumn>
+            <ListView x:Name="ListViewResults" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="16" Height="auto" Background="#FFFFD374" BorderBrush="#FFFFD374" Foreground="Black" FontFamily="Berlin Sans FB" BorderThickness="0" ClipToBounds="True">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Напиток" Width="auto" ></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=CountBottle}" Header="Кол-во бутылок" Width="auto"></GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=PriceBottle}" Header="Цена за бутылку" Width="auto"></GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=FullPrice}" Header="Стоимость" Width="auto"></GridViewColumn>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                        </GridView.Columns>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="Background" Value="#FFFDB061" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                    </GridView>
+                </ListView.View>
+            </ListView>
             <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="auto" Margin="0, 30, 0, 10">
-                <TextBlock x:Name="TotalBlock" FontSize="18" FontWeight="Medium"/>
-                <Rectangle Stroke="Black" Height="auto" Width="auto" Margin="-20, -30, -20, 0" ></Rectangle>
+                <TextBlock x:Name="TotalBlock" FontSize="18" FontWeight="Medium" Width="Auto" Foreground="#FFF61F05" FontFamily="Berlin Sans FB"></TextBlock>
+                <Rectangle x:Name="MainResult" Stroke="#FFEB730A" Height="auto" Width="auto" Margin="-20, -20, -20, 0" RadiusX="15" RadiusY="10" >
+                    <Rectangle.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="25"/>
+                        </Style>
+                    </Rectangle.Resources>
+                </Rectangle>
             </StackPanel>
         </StackPanel>
     </Grid>
