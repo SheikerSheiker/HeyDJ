@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,64 +25,30 @@ namespace PartyMaker
         public MainWindow()
         {
             InitializeComponent();
-            TextBlock beerLiters = new TextBlock();
-            double x = 0;
-            for (; x <= 5; x += 0.5)
-            {
-                beerLiters.Inlines.Add($"{x}");
-            }
-            
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string[] arr = new string[3];
-            arr[0] = "Водка " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5)).ToString() + " " + VodkaPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(VodkaPeople.Text) / 0.5) * int.Parse(VodkaPrice.Text)).ToString();
-            arr[1] = "Виски " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5)).ToString() + " " + WhiskeyPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(WhiskeyPeople.Text) / 0.5) * int.Parse(WhiskeyPrice.Text)).ToString();
-            arr[2] = "Коньяк " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5)).ToString() + " " + CognacPrice.Text + " " + (Math.Ceiling(AlcoSlider.Value * int.Parse(CognacPeople.Text) / 0.5) * int.Parse(CognacPrice.Text)).ToString();
+            List<Alco> allAlco = new List<Alco>();
+            if ((Name1.Text.Length != 0) && (Price1.Text.Length != 0) && (Count1.Text.Length != 0))
+            {
+                Alco alco1 = new Alco { Name = Name1.Text, Price = int.Parse(Price1.Text), Count = int.Parse(Count1.Text) };
+                allAlco.Add(alco1);
+            }
+            if ((Name2.Text.Length != 0) && (Price2.Text.Length != 0) && (Count2.Text.Length != 0))
+            {
+                Alco alco2 = new Alco { Name = Name2.Text, Price = int.Parse(Price2.Text), Count = int.Parse(Count2.Text) };
+                allAlco.Add(alco2);
+            }
+            if ((Name3.Text.Length != 0) && (Price3.Text.Length != 0) && (Count3.Text.Length != 0))
+            {
+                Alco alco3 = new Alco { Name = Name3.Text, Price = int.Parse(Price3.Text), Count = int.Parse(Count3.Text) };
+                allAlco.Add(alco3);
+            }
 
-            Result result = new Result(arr);
+
+            Result result = new Result(allAlco, AlcoSlider.Value);
             result.Show();
-        }
-
-        private void BeerSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void VodkaPrice_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void WhiskeyPrice_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CognacPrice_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void VodkaPeople_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void WhiskeyPeople_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void CognacPeople_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

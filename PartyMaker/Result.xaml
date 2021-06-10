@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PartyMaker"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Result" Height="547.826" Width="415.601">
-    <Grid Margin="0,0,416.6,-125">
-        <DataGrid x:Name="ResultGrid" HorizontalAlignment="Left" Height="501" Margin="9,8,-401,0" VerticalAlignment="Top" Width="392" SelectionChanged="DataGrid_SelectionChanged"/>
+        Title="Результат" Height="540" Width="420" ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+        <ListView x:Name="ListViewResults" HorizontalAlignment="Stretch" VerticalAlignment="Top" FontSize="16" Height="auto">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Напиток" Width="auto"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=CountBottle}" Header="Кол-во бутылок" Width="auto"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=PriceBottle}" Header="Цена за бутылку" Width="auto"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=FullPrice}" Header="Стоимость" Width="auto"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="TotalBlock" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="18" Height="auto" FontWeight="Medium"/>
+        </StackPanel>
     </Grid>
 </Window>
