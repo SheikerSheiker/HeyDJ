@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
         Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
     <Grid Background="#FFF1D8A2">
-        <Button x:Name="ButtonCount" Content="Рассчитать" HorizontalAlignment="Left" Margin="177,576,0,0" VerticalAlignment="Top" Width="204" Height="54" Click="Button_Click" Background="#FFF7BC05" BorderBrush="#FFEDEBE6" Foreground="#FFF74205" FontSize="24" FontFamily="Berlin Sans FB" FontWeight="Bold">
+        <Button x:Name="ButtonCount" Content="Рассчитать" Click="Button_Click" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="200" Height="54" Background="#FFF7BC05" BorderBrush="Orange" Foreground="#FFF74205" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" BorderThickness="4,2">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="25"/>
@@ -31,7 +31,7 @@
 
 
         <!--BeerSlider-->
-        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0" ValueChanged="BeerSlider_ValueChanged">
+        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0">
             <Slider.Template>
                 <ControlTemplate TargetType="{x:Type Slider}" >
                     <Grid>
@@ -176,8 +176,29 @@
             </Slider.Template>
         </Slider>
 
+        <Grid x:Name="GridBeer" Height="60" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-36"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <UniformGrid x:Name="Beer1" Columns="3" Height="30" VerticalAlignment="Top">
+                <TextBlock x:Name="BeerName1" Text="Пиво" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF5200" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="BeerPrice1" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice1_PreviewTextInput" TextChanged="BeerPrice1_TextChanged"></TextBox>
+                <TextBox x:Name="BeerCount1" Margin="25, 5, 5, 5" PreviewTextInput="BeerCount1_PreviewTextInput" TextChanged="BeerCount1_TextChanged"></TextBox>
+            </UniformGrid>
+            <UniformGrid x:Name="Beer2" Columns="3" Height="30" VerticalAlignment="Bottom">
+                <TextBlock x:Name="BeerName2" Text="Сидр" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF002E" VerticalAlignment="Center"></TextBlock>
+                <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice2_PreviewTextInput" TextChanged="BeerPrice2_TextChanged"></TextBox>
+                <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5"></TextBox>
+            </UniformGrid>
+        </Grid>
+
         <!--AlcoSlider-->
-        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1.5" Minimum="0" SmallChange="0.25" Value="0.75" LargeChange="0.25" TickFrequency="0.25" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 290, 0, 0" ValueChanged="BeerSlider_ValueChanged">
+        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1" Minimum="0" SmallChange="0.1" Value="0.5" LargeChange="0.1" TickFrequency="0.1" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 340, 0, 0">
             <Slider.Template>
                 <ControlTemplate TargetType="{x:Type Slider}" >
                     <Grid>
@@ -233,7 +254,7 @@
                                 </Thumb>
                             </Track.Thumb>
                         </Track>
-                        <UniformGrid Columns="7" Width="500" VerticalAlignment="Center">
+                        <UniformGrid x:Name="AlcoGrid" Columns="11" Width="490" VerticalAlignment="Center">
                             <UniformGrid.Effect>
                                 <DropShadowEffect BlurRadius="0" ShadowDepth="1"/>
                             </UniformGrid.Effect>
@@ -242,32 +263,52 @@
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0,25" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.2" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0,75" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF4820B">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF4820B">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF56C0C">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.4" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF56C0C">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1,25" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF64E0E">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF64E0E">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
                             </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1,5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                            <TextBlock VerticalAlignment="Bottom" Text="0.6" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0.7" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0.8" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="0.9" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
                                 <TextBlock.Effect>
                                     <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
                                 </TextBlock.Effect>
@@ -311,5 +352,48 @@
             </Slider.Template>
         </Slider>
 
+        <Grid x:Name="GridAlco" Height="100" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="200"/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <UniformGrid x:Name="Alco1" Columns="3" Height="30" VerticalAlignment="Top">
+                <TextBox x:Name="Name1" Margin="5, 5, 25, 5"></TextBox>
+                <TextBox x:Name="Price1" Margin="15, 5, 15, 5" PreviewTextInput="Price1_PreviewTextInput" TextChanged="Price1_TextChanged"></TextBox>
+                <TextBox x:Name="Count1" Margin="25, 5, 5, 5" PreviewTextInput="Count1_PreviewTextInput" TextChanged="Count1_TextChanged"></TextBox>
+            </UniformGrid>
+            <UniformGrid x:Name="Alco2" Columns="3" Height="30" VerticalAlignment="Center">
+                <TextBox x:Name="Name2" Margin="5, 5, 25, 5"></TextBox>
+                <TextBox x:Name="Price2" Margin="15, 5, 15, 5" PreviewTextInput="Price2_PreviewTextInput" TextChanged="Price2_TextChanged"></TextBox>
+                <TextBox x:Name="Count2" Margin="25, 5, 5, 5" PreviewTextInput="Count2_PreviewTextInput" TextChanged="Count2_TextChanged"></TextBox>
+            </UniformGrid>
+            <UniformGrid x:Name="Alco3" Columns="3" Height="30" VerticalAlignment="Bottom">
+                <TextBox x:Name="Name3" Margin="5, 5, 25, 5"></TextBox>
+                <TextBox x:Name="Price3" Margin="15, 5, 15, 5" PreviewTextInput="Price3_PreviewTextInput" TextChanged="Price3_TextChanged"></TextBox>
+                <TextBox x:Name="Count3" Margin="25, 5, 5, 5" PreviewTextInput="Count3_PreviewTextInput" TextChanged="Count3_TextChanged"></TextBox>
+            </UniformGrid>
+        </Grid>
+
+
+
+
+
+
+        <!--
+        <TextBlock x:Name="Vodka" HorizontalAlignment="Left" Margin="34,468,0,0" TextWrapping="Wrap" Text="Водка" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="Whiskey" HorizontalAlignment="Left" Margin="34,497,0,0" TextWrapping="Wrap" Text="Виски" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBlock x:Name="Сognac" HorizontalAlignment="Left" Margin="34,527,0,0" TextWrapping="Wrap" Text="Коньяк" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="VodkaPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,466,0,0" TextChanged="VodkaPrice_TextChanged"/>
+        <TextBox x:Name="WhiskeyPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,495,0,0" TextChanged="WhiskeyPrice_TextChanged"/>
+        <TextBox x:Name="CognacPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,525,0,0" TextChanged="CognacPrice_TextChanged"/>
+        <TextBox x:Name="VodkaPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,466,0,0" TextChanged="VodkaPeople_TextChanged"/>
+        <TextBox x:Name="WhiskeyPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,495,0,0" TextChanged="WhiskeyPeople_TextChanged"/>
+        <TextBox x:Name="CognacPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,525,0,0" TextChanged="CognacPeople_TextChanged"/>
+        <TextBlock x:Name="drunk" HorizontalAlignment="Left" Margin="35,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        -->
     </Grid>
 </Window>
