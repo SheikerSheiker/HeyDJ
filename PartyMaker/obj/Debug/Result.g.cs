@@ -42,7 +42,15 @@ namespace PartyMaker {
     public partial class Result : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         
-        #line 12 "..\..\Result.xaml"
+        #line 1 "..\..\Result.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal PartyMaker.Result ResultWin;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 13 "..\..\Result.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ListView ListViewResults;
         
@@ -50,9 +58,17 @@ namespace PartyMaker {
         #line hidden
         
         
-        #line 25 "..\..\Result.xaml"
+        #line 32 "..\..\Result.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock TotalBlock;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 33 "..\..\Result.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Shapes.Rectangle MainResult;
         
         #line default
         #line hidden
@@ -88,10 +104,16 @@ namespace PartyMaker {
             switch (connectionId)
             {
             case 1:
-            this.ListViewResults = ((System.Windows.Controls.ListView)(target));
+            this.ResultWin = ((PartyMaker.Result)(target));
             return;
             case 2:
+            this.ListViewResults = ((System.Windows.Controls.ListView)(target));
+            return;
+            case 3:
             this.TotalBlock = ((System.Windows.Controls.TextBlock)(target));
+            return;
+            case 4:
+            this.MainResult = ((System.Windows.Shapes.Rectangle)(target));
             return;
             }
             this._contentLoaded = true;

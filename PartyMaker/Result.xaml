@@ -1,4 +1,4 @@
-﻿<Window x:Class="PartyMaker.Result"
+﻿<Window x:Name="ResultWin" x:Class="PartyMaker.Result"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,21 +8,28 @@
         mc:Ignorable="d"
         Title="Результат" Width="420" SizeToContent="Height"  ResizeMode="NoResize">
     <Grid>
+        <Rectangle Fill="#FFFFD374"/>
         <StackPanel>
             <ListView x:Name="ListViewResults" VerticalAlignment="Top" FontSize="16" Height="auto">
                 <ListView.View>
                     <GridView AllowsColumnReorder="False" >
                         <GridView.Columns>
-                            <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Напиток"></GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=CountBottle}" Header="Кол-во бутылок"></GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" Header="Напиток"></GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=PriceBottle}" Header="Цена за бутылку"></GridViewColumn>
                             <GridViewColumn DisplayMemberBinding="{Binding Path=FullPrice}" Header="Стоимость"></GridViewColumn>
                         </GridView.Columns>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="Background" Value="#FFFDB061" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Border BorderBrush="Silver" BorderThickness="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="auto" Margin="0, 30, 0, 10" Padding="20, 0, 20, 0">
-                <TextBlock x:Name="TotalBlock" FontSize="18" FontWeight="Medium"/>
+            <Border BorderBrush="#FFEB730A" BorderThickness="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="auto" Margin="0, 30, 0, 10" Padding="20, 0, 20, 0" CornerRadius="25">
+                <TextBlock x:Name="TotalBlock" FontSize="18" FontWeight="Medium" Width="Auto" Foreground="#FFF61F05" FontFamily="Berlin Sans FB"></TextBlock>
             </Border>
         </StackPanel>
     </Grid>
