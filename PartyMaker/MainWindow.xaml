@@ -4,396 +4,1348 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PartyMaker"
-        mc:Ignorable="d" 
-        Title="PartyMaker" Height="700" Width="560" ResizeMode="NoResize">
+        mc:Ignorable="d"
+        Title="PartyMaker"
+        Window.SizeToContent="Height"
+        Width="560"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <!--This is the Style Beer TB-->
+        <Style x:Key="BeerTB1"
+               TargetType="TextBox">
+            <Setter Property="Margin"
+                    Value="5" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFEBB8"
+                                      Offset="0" />
+                        <GradientStop Color="#FFFFFDAE" Offset="1" />
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Foreground" Value="#F4A900" />
+            <Setter Property="BorderBrush" Value="#FFFFB987" />
+            <Setter Property="Padding" Value="10, 0, 10, 0" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root"
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}"
+                              SnapsToDevicePixels="true">
+                            <Border x:Name="Background"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="10"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          BorderThickness="0"
+                                          Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FF7521" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FF9250" />
+                                <Setter Property="Background"
+                                        Value="#FFFACD" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--End Beer TB-->
+
+        <!--This is the Style Cider TB-->
+        <Style x:Key="BeerTB2"
+               TargetType="TextBox">
+            <Setter Property="Margin"
+                    Value="5" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFF1D0"
+                                      Offset="1" />
+                        <GradientStop Color="#FFFFF6A9" />
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Foreground" Value="#F4A900" />
+            <Setter Property="BorderBrush" Value="#FFFFB987" />
+            <Setter Property="Padding" Value="10, 0, 10, 0" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root"
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}"
+                              SnapsToDevicePixels="true">
+                            <Border x:Name="Background"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="10"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          BorderThickness="0"
+                                          Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FF4D21" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FF6741" />
+                                <Setter Property="Background"
+                                        Value="#FFFACD" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--End Cider TB-->
+
+        <!--This is the Style AlcoName TB-->
+        <Style x:Key="AlcoNameTB"
+               TargetType="TextBox">
+            <Setter Property="Margin"
+                    Value="5, 3, 25, 3" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFECFC"
+                                      Offset="1" />
+                        <GradientStop Color="#FFFFE7FD" Offset="0" />
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Foreground" Value="#FFC50000" />
+            <Setter Property="BorderBrush" Value="#FFFFABAB" />
+            <Setter Property="Padding" Value="10, 0, 10, 0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root"
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}"
+                              SnapsToDevicePixels="true">
+                            <Border x:Name="Background"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="7"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          BorderThickness="0"
+                                          Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFF5D5D" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFF7A7A" />
+                                <Setter Property="Background"
+                                        Value="#FFFFF3E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--End AlcoName TB-->
+
+        <!--This is the Style AlcoPrice TB-->
+        <Style x:Key="AlcoPriceTB"
+               TargetType="TextBox">
+            <Setter Property="Margin"
+                    Value="15, 3, 15, 3" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFF6E8"
+                                      Offset="0.993" />
+                        <GradientStop Color="#FFFFF9F2" Offset="0"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Foreground" Value="#FFD35400" />
+            <Setter Property="BorderBrush" Value="#FFFFC285" />
+            <Setter Property="Padding" Value="10, 0, 10, 0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root"
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}"
+                              SnapsToDevicePixels="true">
+                            <Border x:Name="Background"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="7"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          BorderThickness="0"
+                                          Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFF9D5D" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFFB585" />
+                                <Setter Property="Background"
+                                        Value="#FFFFF3E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--End AlcoPrice TB-->
+
+        <!--This is the Style AlcoCount TB-->
+        <Style x:Key="AlcoCountTB"
+               TargetType="TextBox">
+            <Setter Property="Margin" Value="25, 3, 5, 3" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFFFFE8"
+                                      Offset="1" />
+                        <GradientStop Color="#FFFFFFF2" Offset="0"/>
+                    </RadialGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="Foreground" Value="#FFD77400" />
+            <Setter Property="BorderBrush" Value="#FFFFDE61" />
+            <Setter Property="Padding" Value="10, 0, 10, 0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Grid x:Name="root"
+                              Height="{TemplateBinding Height}"
+                              Width="{TemplateBinding Width}"
+                              SnapsToDevicePixels="true">
+                            <Border x:Name="Background"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="7"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Background="{TemplateBinding Background}" />
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          BorderThickness="0"
+                                          Padding="{TemplateBinding Padding}"
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFFD432" />
+                            </Trigger>
+                            <Trigger Property="IsFocused"
+                                     Value="True">
+                                <Setter Property="BorderBrush"
+                                        Value="#FFFFDC59" />
+                                <Setter Property="Background"
+                                        Value="#FFFFF9E8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--End AlcoCount TB-->
+    </Window.Resources>
+
     <Grid Background="#FFF1D8A2">
-        <Button x:Name="ButtonCount" Content="Рассчитать" Click="Button_Click" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="200" Height="54" Background="#FFF7BC05" BorderBrush="Orange" Foreground="#FFF74205" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" BorderThickness="4,2">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="25"/>
-                </Style>
-            </Button.Resources>
-        </Button>
-        <Label x:Name="TextName" Content="ПатиМейкер" HorizontalAlignment="Center" Margin="128,10,113.6,0" VerticalAlignment="Top" Height="61" Width="312" FontSize="48" Foreground="#FFFF7A00" BorderBrush="#FF804500" FontWeight="Bold" BorderThickness="0" FontFamily="Berlin Sans FB"/>
-        <TextBox x:Name="PeopleAmount" HorizontalAlignment="Left" Height="36" Margin="177,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20" BorderBrush="White">
-            <TextBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.5"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Кол-во людей:" HorizontalAlignment="Left" Margin="26,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="146" FontStretch="Condensed" FontFamily="Berlin Sans FB"/>
-        <TextBox x:Name="NoAlcoPeople" HorizontalAlignment="Left" Height="36" Margin="415,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="20" BorderBrush="White">
-            <TextBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.5"/>
-            </TextBox.Background>
-        </TextBox>
-        <Label Content="Непьющих:" HorizontalAlignment="Left" Margin="294,77,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="116" FontStretch="Condensed" FontFamily="Berlin Sans FB"/>
+        <StackPanel HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    Height="auto"
+                    Width="auto">
+            <Label x:Name="TextName"
+                   HorizontalContentAlignment="Center"
+                   Content="ПатиМейкер"
+                   FontSize="48"
+                   Foreground="#FFFF7A00"
+                   FontWeight="Bold"
+                   FontFamily="Berlin Sans FB" />
+
+
+            <!--BEER CONTENT-->
+            <Border BorderBrush="#FFFFB971"
+                    BorderThickness="5"
+                    CornerRadius="25"
+                    Background="#FFFFDA95">
+                <StackPanel>
+                    <!--BeerSlider-->
+                    <Slider x:Name="BeerSlider"
+                            Width="500"
+                            Height="130"
+                            Margin="0, 10, 0, 30"
+                            Maximum="5"
+                            Minimum="0"
+                            SmallChange="0.5"
+                            Value="2.5"
+                            LargeChange="0.5"
+                            TickFrequency="0.5"
+                            IsSnapToTickEnabled="True">
+                        <Slider.Template>
+                            <ControlTemplate TargetType="{x:Type Slider}">
+                                <Grid>
+                                    <StackPanel VerticalAlignment="Top">
+                                        <StackPanel.Effect>
+                                            <BlurEffect Radius="1" />
+                                        </StackPanel.Effect>
+                                        <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
+                                            <Polygon.Effect>
+                                                <DropShadowEffect ShadowDepth="4"
+                                                                  Direction="-135"
+                                                                  BlurRadius="5" />
+                                            </Polygon.Effect>
+                                            <Polygon.Fill>
+                                                <LinearGradientBrush EndPoint="0.5,1"
+                                                                     StartPoint="0.5,0">
+                                                    <LinearGradientBrush.RelativeTransform>
+                                                        <TransformGroup>
+                                                            <RotateTransform Angle="-90"
+                                                                             CenterY="0.5"
+                                                                             CenterX="0.5" />
+                                                            <TranslateTransform />
+                                                        </TransformGroup>
+                                                    </LinearGradientBrush.RelativeTransform>
+                                                    <GradientStop Color="#FFFFEE00"
+                                                                  Offset="0" />
+                                                    <GradientStop Color="#FFFF7700"
+                                                                  Offset="1" />
+                                                </LinearGradientBrush>
+                                            </Polygon.Fill>
+                                        </Polygon>
+                                    </StackPanel>
+                                    <Track Grid.Row="1"
+                                           x:Name="PART_Track"
+                                           Width="480"
+                                           VerticalAlignment="Top">
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="Slider.IncreaseLarge"
+                                                          Opacity="0" />
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton   Command="Slider.DecreaseLarge"
+                                                            Opacity="0" />
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb>
+                                                <Thumb.Template>
+                                                    <ControlTemplate TargetType="{x:Type Thumb}">
+                                                        <Rectangle Height="46"
+                                                                   Width="61">
+                                                            <Rectangle.Fill>
+                                                                <ImageBrush ImageSource="Picture/beer.png" />
+                                                            </Rectangle.Fill>
+                                                        </Rectangle>
+                                                    </ControlTemplate>
+                                                </Thumb.Template>
+                                            </Thumb>
+                                        </Track.Thumb>
+                                    </Track>
+                                    <UniformGrid Columns="11"
+                                                 Width="460"
+                                                 VerticalAlignment="Center">
+                                        <UniformGrid.Effect>
+                                            <DropShadowEffect BlurRadius="0"
+                                                              ShadowDepth="1" />
+                                        </UniformGrid.Effect>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="0"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFEB01">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="0.5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFE301">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="1"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFD901">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="1.5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFCD01">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="2"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFBE01">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="2.5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFAF00">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="3"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFFA000">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="3.5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFF8F01">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="4"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFF8200">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="4.5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFF7601">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                                   Text="5"
+                                                   FontWeight="Bold"
+                                                   FontSize="14"
+                                                   HorizontalAlignment="Center"
+                                                   Foreground="#FFFF6B00">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                                  ShadowDepth="1"
+                                                                  BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </UniformGrid>
+
+                                    <UniformGrid Columns="3"
+                                                 Width="480"
+                                                 VerticalAlignment="Top">
+                                        <Image Source="beer1.png"
+                                               Width="100">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                                        X="-50" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Image Source="beer2.png"
+                                               Width="100">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                                        X="-15" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Image Source="beer3.png"
+                                               Width="100">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                                        X="50" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                    </UniformGrid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Slider.Template>
+                    </Slider>
+
+                    <!-- Ввод пива, цены и кол-ва пьющих-->
+                    <Border BorderBrush="#FFFFB971"
+                            BorderThickness="5"
+                            CornerRadius="20"
+                            Margin="0, 10, 0, 0"
+                            Width="550"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform Y="1" />
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border.Background>
+                            <RadialGradientBrush>
+                                <GradientStop Color="#FFFFD882"
+                                              Offset="1" />
+                                <GradientStop Color="#FFFFCA59" />
+                            </RadialGradientBrush>
+                        </Border.Background>
+                        <Grid x:Name="Beer1"
+                              Height="60"
+                              VerticalAlignment="Top"
+                              Width="350">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+
+                            <!--1 Row Grid Beer-->
+                            <TextBlock x:Name="BeerName"
+                                       Grid.Column="0"
+                                       Grid.Row="0"
+                                       HorizontalAlignment="Right"
+                                       Margin="0, 0, 10, 0"
+                                       Text="Пиво"
+                                       FontSize="18"
+                                       FontWeight="Medium"
+                                       Foreground="#FFFF5200"
+                                       VerticalAlignment="Center"></TextBlock>
+
+                            <!--This TB is a field input Price-->
+                            <TextBox x:Name="BeerPrice" Style="{StaticResource BeerTB1}"
+                                     Grid.Column="1"
+                                     Grid.Row="0"
+                                     PreviewTextInput="AlcoPrice_PreviewTextInput" TextChanged="AlcoPrice_TextChanged"/>
+                            <!--End TB input Price-->
+                            <!--This TextBlock is a Watermark Price-->
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="IsHitTestVisible" Value="False"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="Text" Value="Цена за 0.5л"/>
+                                        <Setter Property="Grid.Column" Value="1"/>
+                                        <Setter Property="Foreground" Value="#FF535559"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=BeerPrice}"
+                                                         Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--End TextBlock Watermark Price -->
+
+                            <!--This TB is a field input Count-->
+                            <TextBox x:Name="BeerCount" Style="{StaticResource BeerTB1}"
+                                     Grid.Column="2"
+                                     Grid.Row="0"
+                                     PreviewTextInput="AlcoCount_PreviewTextInput" TextChanged="AlcoCount_TextChanged"/>
+                            <!--End TB input Count-->
+                            <!--This TextBlock is a Watermark Count-->
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="IsHitTestVisible" Value="False"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="Text" Value="Кол-во пьющих"/>
+                                        <Setter Property="Grid.Column" Value="2"/>
+                                        <Setter Property="Foreground" Value="#FF535559"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=BeerCount}"
+                                                         Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--End TextBlock Watermark Count -->
+
+                            <!--2 Row Grid Beer -->
+                            <TextBlock  x:Name="CiderName"
+                                       Grid.Column="0"
+                                       Grid.Row="1"
+                                       HorizontalAlignment="Right"
+                                       Margin="0, 0, 10, 0"
+                                       Text="Сидр"
+                                       FontSize="18"
+                                       FontWeight="Medium"
+                                       Foreground="#FFFF2800"
+                                       VerticalAlignment="Center"/>
+
+                            <!--This TB is a field input Price-->
+                            <TextBox x:Name="CiderPrice" Style="{StaticResource BeerTB2}"
+                                     Grid.Column="1"
+                                     Grid.Row="1" 
+                                     PreviewTextInput="AlcoPrice_PreviewTextInput" TextChanged="AlcoPrice_TextChanged"/>
+                            <!--End TB input Price-->
+                            <!--This TextBlock is a Watermark Price-->
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="IsHitTestVisible" Value="False"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="Text" Value="Цена за 0.5л"/>
+                                        <Setter Property="Grid.Column" Value="1"/>
+                                        <Setter Property="Grid.Row" Value="1"/>
+                                        <Setter Property="Foreground" Value="#757575"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=CiderPrice}"
+                                                         Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--End TextBlock Watermark Price -->
+
+                            <!--This TB is a field input Count-->
+                            <TextBox x:Name="CiderCount" Style="{StaticResource BeerTB2}"
+                                     Grid.Column="2"
+                                     Grid.Row="1"
+                                     PreviewTextInput="AlcoCount_PreviewTextInput" TextChanged="AlcoCount_TextChanged"/>
+                            <!--End TB input Count-->
+                            <!--This TextBlock is a Watermark Count-->
+                            <TextBlock>
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Setter Property="IsHitTestVisible" Value="False"/>
+                                        <Setter Property="FontSize" Value="12"/>
+                                        <Setter Property="Text" Value="Кол-во пьющих"/>
+                                        <Setter Property="Grid.Column" Value="2"/>
+                                        <Setter Property="Grid.Row" Value="1"/>
+                                        <Setter Property="Foreground" Value="#757575"/>
+                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                        <Setter Property="VerticalAlignment" Value="Center"/>
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=CiderCount}"
+                                                         Value="">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                            <!--End TextBlock Watermark Count -->
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
 
 
 
-        <!--BeerSlider-->
-        <Slider x:Name="BeerSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="5" Minimum="0" SmallChange="0.5" Value="2.5" LargeChange="0.5" TickFrequency="0.5" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 125, 0, 0">
-            <Slider.Template>
-                <ControlTemplate TargetType="{x:Type Slider}" >
-                    <Grid>
-                        <StackPanel VerticalAlignment="Top">
-                            <StackPanel.Effect>
-                                <BlurEffect Radius="1"/>
-                            </StackPanel.Effect>
-                            <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
-                                <Polygon.Effect>
-                                    <DropShadowEffect ShadowDepth="4" Direction="-135" BlurRadius="5"/>
-                                </Polygon.Effect>
-                                <Polygon.Fill>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <LinearGradientBrush.RelativeTransform>
-                                            <TransformGroup>
-                                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </LinearGradientBrush.RelativeTransform>
-                                        <GradientStop Color="#FFFFEE00" Offset="0"/>
-                                        <GradientStop Color="#FFFF7700" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </Polygon.Fill>
-                            </Polygon>
-                        </StackPanel>
-                        <Track Grid.Row="1" x:Name="PART_Track" Width="480" VerticalAlignment="Top">
-                            <Track.IncreaseRepeatButton>
-                                <RepeatButton Command="Slider.IncreaseLarge" Opacity="0"/>
-                            </Track.IncreaseRepeatButton>
-                            <Track.DecreaseRepeatButton>
-                                <RepeatButton   Command="Slider.DecreaseLarge" Opacity="0"/>
-                            </Track.DecreaseRepeatButton>
-                            <Track.Thumb>
-                                <Thumb>
-                                    <Thumb.Template>
-                                        <ControlTemplate TargetType="{x:Type Thumb}">
-                                            <Rectangle Height="46" Width="61">
-                                                <Rectangle.Fill>
-                                                    <ImageBrush ImageSource="Picture/beer.png"/>
-                                                </Rectangle.Fill>
-                                            </Rectangle>
-                                        </ControlTemplate>
-                                    </Thumb.Template>
-                                </Thumb>
-                            </Track.Thumb>
-                        </Track>
-                        <UniformGrid Columns="11" Width="460" VerticalAlignment="Center">
-                            <UniformGrid.Effect>
-                                <DropShadowEffect BlurRadius="0" ShadowDepth="1"/>
-                            </UniformGrid.Effect>
-                            <TextBlock VerticalAlignment="Bottom" Text="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFEB01">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFE301">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFD901">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFCD01">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="2" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFBE01">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="2.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFAF00">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFFA000">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="3.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8F01">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="4" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF8200">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="4.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF7601">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFFF6B00">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                        </UniformGrid>
+            <!--AlcoSlider-->
+            <Border BorderBrush="#FFFF9D38"
+                    BorderThickness="5"
+                    CornerRadius="25"
+                    Background="#FFFFC77C"
+                    Margin="0, 5, 0, 10"
+                    Padding="0, 0, 0, 10">
+                <StackPanel>
+                    <Slider x:Name="AlcoSlider"
+                            HorizontalAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            Width="500"
+                            Height="130"
+                            Maximum="1"
+                            Minimum="0"
+                            SmallChange="0.1"
+                            Value="0.5"
+                            LargeChange="0.1"
+                            TickFrequency="0.1"
+                            IsSnapToTickEnabled="True"
+                            VerticalAlignment="Top"
+                            Margin="0, 15, 0, 30">
+                        <Slider.Template>
+                            <ControlTemplate TargetType="{x:Type Slider}">
+                                <Grid>
+                                    <StackPanel VerticalAlignment="Top">
+                                        <StackPanel.Effect>
+                                            <BlurEffect Radius="1" />
+                                        </StackPanel.Effect>
+                                        <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
+                                            <Polygon.Effect>
+                                                <DropShadowEffect ShadowDepth="4"
+                                                      Direction="-135"
+                                                      BlurRadius="5" />
+                                            </Polygon.Effect>
+                                            <Polygon.Fill>
+                                                <LinearGradientBrush EndPoint="0.5,1"
+                                                         StartPoint="0.5,0">
+                                                    <LinearGradientBrush.RelativeTransform>
+                                                        <TransformGroup>
+                                                            <RotateTransform Angle="-90"
+                                                                 CenterY="0.5"
+                                                                 CenterX="0.5" />
+                                                            <TranslateTransform />
+                                                        </TransformGroup>
+                                                    </LinearGradientBrush.RelativeTransform>
+                                                    <GradientStop Color="#FFF3A009"
+                                                      Offset="0" />
+                                                    <GradientStop Color="#FFF72910"
+                                                      Offset="1" />
+                                                    <GradientStop Color="#FFF3A009"
+                                                      Offset="0.389" />
+                                                </LinearGradientBrush>
+                                            </Polygon.Fill>
+                                        </Polygon>
+                                    </StackPanel>
+                                    <Track Grid.Row="1"
+                               x:Name="PART_Track"
+                               Width="480"
+                               VerticalAlignment="Top">
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="Slider.IncreaseLarge"
+                                              Opacity="0" />
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton   Command="Slider.DecreaseLarge"
+                                                Opacity="0" />
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb>
+                                                <Thumb.Template>
+                                                    <ControlTemplate TargetType="{x:Type Thumb}">
+                                                        <Rectangle Height="60"
+                                                       Width="50"
+                                                       RenderTransformOrigin="0.5,0.5">
+                                                            <Rectangle.RenderTransform>
+                                                                <TransformGroup>
+                                                                    <ScaleTransform />
+                                                                    <SkewTransform />
+                                                                    <RotateTransform />
+                                                                    <TranslateTransform Y="-10" />
+                                                                </TransformGroup>
+                                                            </Rectangle.RenderTransform>
+                                                            <Rectangle.Fill>
+                                                                <ImageBrush ImageSource="alco.png" />
+                                                            </Rectangle.Fill>
+                                                        </Rectangle>
+                                                    </ControlTemplate>
+                                                </Thumb.Template>
+                                            </Thumb>
+                                        </Track.Thumb>
+                                    </Track>
+                                    <UniformGrid x:Name="AlcoGrid"
+                                     Columns="11"
+                                     Width="490"
+                                     VerticalAlignment="Center">
+                                        <UniformGrid.Effect>
+                                            <DropShadowEffect BlurRadius="0"
+                                                  ShadowDepth="1" />
+                                        </UniformGrid.Effect>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF3A009">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.1"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF3A009">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.2"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF3A009">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.3"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF4820B">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.4"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF56C0C">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.5"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF64E0E">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.6"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF73010">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.7"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF73010">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.8"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF73010">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="0.9"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF73010">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                        <TextBlock VerticalAlignment="Bottom"
+                                       Text="1"
+                                       FontWeight="Bold"
+                                       FontSize="14"
+                                       HorizontalAlignment="Center"
+                                       Foreground="#FFF73010">
+                                            <TextBlock.Effect>
+                                                <DropShadowEffect Direction="120"
+                                                      ShadowDepth="1"
+                                                      BlurRadius="0" />
+                                            </TextBlock.Effect>
+                                        </TextBlock>
+                                    </UniformGrid>
 
-                        <UniformGrid Columns="3" Width="480" VerticalAlignment="Top">
-                            <Image Source="beer1.png" Width="100">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="-50"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                            <Image Source="beer2.png" Width="100">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="-15"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                            <Image Source="beer3.png" Width="100">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="50"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                        </UniformGrid>
+                                    <UniformGrid Columns="3"
+                                     Width="480"
+                                     VerticalAlignment="Top">
+                                        <Image Source="alco1.png"
+                                   Width="100">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                            X="-50" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Image Source="alco2.png"
+                                   Width="90">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                            X="-5" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                        <Image Source="alco3.png"
+                                   Width="80">
+                                            <Image.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform />
+                                                    <SkewTransform />
+                                                    <RotateTransform />
+                                                    <TranslateTransform Y="80"
+                                                            X="50" />
+                                                </TransformGroup>
+                                            </Image.RenderTransform>
+                                        </Image>
+                                    </UniformGrid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Slider.Template>
+                    </Slider>
+
+                    <!--TextBox's Alco Grid -->
+                    <Grid x:Name="GridAlco"
+                        Height="100"
+                          VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <!--BEGIN GRID-->
+                        <TextBox x:Name="Name1" Style="{StaticResource AlcoNameTB}"
+                                 Grid.Column="0" Grid.Row="0"
+                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                        <!--This TextBlock is a Watermark Name-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="5, 3, 25, 3" />
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Вид алкоголя"/>
+                                    <Setter Property="Grid.Column" Value="0"/>
+                                    <Setter Property="Grid.Row" Value="0"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Name1}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Name -->
+                        <TextBox x:Name="Price1" Style="{StaticResource AlcoPriceTB}"
+                                     Grid.Column="1" Grid.Row="0"
+                         PreviewTextInput="AlcoPrice_PreviewTextInput"
+                         TextChanged="AlcoPrice_TextChanged"/>
+                        <!--This TextBlock is a Watermark Price-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Цена за 0.5л"/>
+                                    <Setter Property="Grid.Column" Value="1"/>
+                                    <Setter Property="Grid.Row" Value="0"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Price1}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Price -->
+                        <TextBox x:Name="Count1" Style="{StaticResource AlcoCountTB}"
+                                 Grid.Column="2" Grid.Row="0"
+                         PreviewTextInput="AlcoCount_PreviewTextInput"
+                         TextChanged="AlcoCount_TextChanged"/>
+                        <!--This TextBlock is a Watermark Count-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="25, 3, 5, 3" />
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Кол-во пьющих"/>
+                                    <Setter Property="Grid.Column" Value="2"/>
+                                    <Setter Property="Grid.Row" Value="0"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Count1}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Count -->
+
+                        <!--***ROW 2***-->
+                        <TextBox x:Name="Name2" Style="{StaticResource AlcoNameTB}"
+                                 Grid.Column="0" Grid.Row="1"
+                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                        <!--This TextBlock is a Watermark Name-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="5, 3, 25, 3"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Вид алкоголя"/>
+                                    <Setter Property="Grid.Column" Value="0"/>
+                                    <Setter Property="Grid.Row" Value="1"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Name2}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Name -->
+                        <TextBox x:Name="Price2" Style="{StaticResource AlcoPriceTB}"
+                                     Grid.Column="1" Grid.Row="1"
+                         PreviewTextInput="AlcoPrice_PreviewTextInput"
+                         TextChanged="AlcoPrice_TextChanged"/>
+                        <!--This TextBlock is a Watermark Price-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Цена за 0.5л"/>
+                                    <Setter Property="Grid.Column" Value="1"/>
+                                    <Setter Property="Grid.Row" Value="1"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Price2}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Price -->
+                        <TextBox x:Name="Count2" Style="{StaticResource AlcoCountTB}"
+                                 Grid.Column="2" Grid.Row="1"
+                         PreviewTextInput="AlcoCount_PreviewTextInput"
+                         TextChanged="AlcoCount_TextChanged"/>
+                        <!--This TextBlock is a Watermark Count-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="25, 3, 5, 3" />
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Кол-во пьющих"/>
+                                    <Setter Property="Grid.Column" Value="2"/>
+                                    <Setter Property="Grid.Row" Value="1"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Count2}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Count -->
+
+                        <!--***ROW 3***-->
+                        <TextBox x:Name="Name3" Style="{StaticResource AlcoNameTB}"
+                                 Grid.Column="0" Grid.Row="2"
+                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                        <!--This TextBlock is a Watermark Name-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="5, 3, 25, 3" />
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Вид алкоголя"/>
+                                    <Setter Property="Grid.Column" Value="0"/>
+                                    <Setter Property="Grid.Row" Value="2"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Name3}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Name -->
+                        <TextBox x:Name="Price3" Style="{StaticResource AlcoPriceTB}"
+                                     Grid.Column="1" Grid.Row="2"
+                         PreviewTextInput="AlcoPrice_PreviewTextInput"
+                         TextChanged="AlcoPrice_TextChanged"/>
+                        <!--This TextBlock is a Watermark Price-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Цена за 0.5л"/>
+                                    <Setter Property="Grid.Column" Value="1"/>
+                                    <Setter Property="Grid.Row" Value="2"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Price3}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Price -->
+                        <TextBox x:Name="Count3" Style="{StaticResource AlcoCountTB}"
+                                 Grid.Column="2" Grid.Row="2"
+                         PreviewTextInput="AlcoCount_PreviewTextInput"
+                         TextChanged="AlcoCount_TextChanged"/>
+                        <!--This TextBlock is a Watermark Count-->
+                        <TextBlock>
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="IsHitTestVisible" Value="False"/>
+                                    <Setter Property="Margin" Value="25, 3, 5, 3" />
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="Text" Value="Кол-во пьющих"/>
+                                    <Setter Property="Grid.Column" Value="2"/>
+                                    <Setter Property="Grid.Row" Value="2"/>
+                                    <Setter Property="Foreground" Value="#757575"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Count3}"
+                                                         Value="">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                        <!--End TextBlock Watermark Count -->
                     </Grid>
-                </ControlTemplate>
-            </Slider.Template>
-        </Slider>
-
-        <Grid x:Name="GridBeer" Height="60" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="-36"/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <UniformGrid x:Name="Beer1" Columns="3" Height="30" VerticalAlignment="Top">
-                <TextBlock x:Name="BeerName1" Text="Пиво" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF5200" VerticalAlignment="Center"></TextBlock>
-                <TextBox x:Name="BeerPrice1" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice1_PreviewTextInput" TextChanged="BeerPrice1_TextChanged"></TextBox>
-                <TextBox x:Name="BeerCount1" Margin="25, 5, 5, 5" PreviewTextInput="BeerCount1_PreviewTextInput" TextChanged="BeerCount1_TextChanged"></TextBox>
-            </UniformGrid>
-            <UniformGrid x:Name="Beer2" Columns="3" Height="30" VerticalAlignment="Bottom">
-                <TextBlock x:Name="BeerName2" Text="Сидр" FontSize="18" FontWeight="Medium" Margin="15, 0, 25, 0" Foreground="#FFFF002E" VerticalAlignment="Center"></TextBlock>
-                <TextBox x:Name="BeerPrice2" Margin="15, 5, 15, 5" PreviewTextInput="BeerPrice2_PreviewTextInput" TextChanged="BeerPrice2_TextChanged"></TextBox>
-                <TextBox x:Name="BeerCount2" Margin="25, 5, 5, 5" PreviewTextInput="BeerCount2_PreviewTextInput" TextChanged="BeerCount2_TextChanged"></TextBox>
-            </UniformGrid>
-        </Grid>
-
-        <!--AlcoSlider-->
-        <Slider x:Name="AlcoSlider" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Width="500" Height="130" Maximum="1" Minimum="0" SmallChange="0.1" Value="0.5" LargeChange="0.1" TickFrequency="0.1" IsSnapToTickEnabled="True" VerticalAlignment="Top" Margin="0, 340, 0, 0">
-            <Slider.Template>
-                <ControlTemplate TargetType="{x:Type Slider}" >
-                    <Grid>
-                        <StackPanel VerticalAlignment="Top">
-                            <StackPanel.Effect>
-                                <BlurEffect Radius="1"/>
-                            </StackPanel.Effect>
-                            <Polygon Points="20, 40, 478, 32, 480, 34, 480, 42, 478, 44, 22, 44, 20, 42">
-                                <Polygon.Effect>
-                                    <DropShadowEffect ShadowDepth="4" Direction="-135" BlurRadius="5"/>
-                                </Polygon.Effect>
-                                <Polygon.Fill>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <LinearGradientBrush.RelativeTransform>
-                                            <TransformGroup>
-                                                <RotateTransform Angle="-90" CenterY="0.5" CenterX="0.5"/>
-                                                <TranslateTransform/>
-                                            </TransformGroup>
-                                        </LinearGradientBrush.RelativeTransform>
-                                        <GradientStop Color="#FFF3A009" Offset="0"/>
-                                        <GradientStop Color="#FFF72910" Offset="1"/>
-                                        <GradientStop Color="#FFF3A009" Offset="0.389"/>
-                                    </LinearGradientBrush>
-                                </Polygon.Fill>
-                            </Polygon>
-                        </StackPanel>
-                        <Track Grid.Row="1" x:Name="PART_Track" Width="480" VerticalAlignment="Top">
-                            <Track.IncreaseRepeatButton>
-                                <RepeatButton Command="Slider.IncreaseLarge" Opacity="0"/>
-                            </Track.IncreaseRepeatButton>
-                            <Track.DecreaseRepeatButton>
-                                <RepeatButton   Command="Slider.DecreaseLarge" Opacity="0"/>
-                            </Track.DecreaseRepeatButton>
-                            <Track.Thumb>
-                                <Thumb>
-                                    <Thumb.Template>
-                                        <ControlTemplate TargetType="{x:Type Thumb}">
-                                            <Rectangle Height="60" Width="50" RenderTransformOrigin="0.5,0.5" >
-                                                <Rectangle.RenderTransform>
-                                                    <TransformGroup>
-                                                        <ScaleTransform/>
-                                                        <SkewTransform/>
-                                                        <RotateTransform/>
-                                                        <TranslateTransform Y="-10"/>
-                                                    </TransformGroup>
-                                                </Rectangle.RenderTransform>
-                                                <Rectangle.Fill>
-                                                    <ImageBrush ImageSource="alco.png"/>
-                                                </Rectangle.Fill>
-                                            </Rectangle>
-                                        </ControlTemplate>
-                                    </Thumb.Template>
-                                </Thumb>
-                            </Track.Thumb>
-                        </Track>
-                        <UniformGrid x:Name="AlcoGrid" Columns="11" Width="490" VerticalAlignment="Center">
-                            <UniformGrid.Effect>
-                                <DropShadowEffect BlurRadius="0" ShadowDepth="1"/>
-                            </UniformGrid.Effect>
-                            <TextBlock VerticalAlignment="Bottom" Text="0" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.2" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF3A009">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF4820B">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.4" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF56C0C">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.5" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF64E0E">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.6" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.7" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.8" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="0.9" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                            <TextBlock VerticalAlignment="Bottom" Text="1" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center" Foreground="#FFF73010">
-                                <TextBlock.Effect>
-                                    <DropShadowEffect Direction="120" ShadowDepth="1" BlurRadius="0"/>
-                                </TextBlock.Effect>
-                            </TextBlock>
-                        </UniformGrid>
-
-                        <UniformGrid Columns="3" Width="480" VerticalAlignment="Top">
-                            <Image Source="alco1.png" Width="100">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="-50"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                            <Image Source="alco2.png" Width="90">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="-5"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                            <Image Source="alco3.png" Width="80">
-                                <Image.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform Y="80" X="50"/>
-                                    </TransformGroup>
-                                </Image.RenderTransform>
-                            </Image>
-                        </UniformGrid>
-                    </Grid>
-                </ControlTemplate>
-            </Slider.Template>
-        </Slider>
-
-        <Grid x:Name="GridAlco" Height="100" RenderTransformOrigin="0.5,0.5">
-            <Grid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="200"/>
-                </TransformGroup>
-            </Grid.RenderTransform>
-            <UniformGrid x:Name="Alco1" Columns="3" Height="30" VerticalAlignment="Top">
-                <TextBox x:Name="Name1" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price1" Margin="15, 5, 15, 5" PreviewTextInput="Price1_PreviewTextInput" TextChanged="Price1_TextChanged"></TextBox>
-                <TextBox x:Name="Count1" Margin="25, 5, 5, 5" PreviewTextInput="Count1_PreviewTextInput" TextChanged="Count1_TextChanged"></TextBox>
-            </UniformGrid>
-            <UniformGrid x:Name="Alco2" Columns="3" Height="30" VerticalAlignment="Center">
-                <TextBox x:Name="Name2" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price2" Margin="15, 5, 15, 5" PreviewTextInput="Price2_PreviewTextInput" TextChanged="Price2_TextChanged"></TextBox>
-                <TextBox x:Name="Count2" Margin="25, 5, 5, 5" PreviewTextInput="Count2_PreviewTextInput" TextChanged="Count2_TextChanged"></TextBox>
-            </UniformGrid>
-            <UniformGrid x:Name="Alco3" Columns="3" Height="30" VerticalAlignment="Bottom">
-                <TextBox x:Name="Name3" Margin="5, 5, 25, 5"></TextBox>
-                <TextBox x:Name="Price3" Margin="15, 5, 15, 5" PreviewTextInput="Price3_PreviewTextInput" TextChanged="Price3_TextChanged"></TextBox>
-                <TextBox x:Name="Count3" Margin="25, 5, 5, 5" PreviewTextInput="Count3_PreviewTextInput" TextChanged="Count3_TextChanged"></TextBox>
-            </UniformGrid>
-        </Grid>
-
-
-
-
-
-
-        <!--
-        <TextBlock x:Name="Vodka" HorizontalAlignment="Left" Margin="34,468,0,0" TextWrapping="Wrap" Text="Водка" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <TextBlock x:Name="Whiskey" HorizontalAlignment="Left" Margin="34,497,0,0" TextWrapping="Wrap" Text="Виски" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <TextBlock x:Name="Сognac" HorizontalAlignment="Left" Margin="34,527,0,0" TextWrapping="Wrap" Text="Коньяк" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <TextBox x:Name="VodkaPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,466,0,0" TextChanged="VodkaPrice_TextChanged"/>
-        <TextBox x:Name="WhiskeyPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,495,0,0" TextChanged="WhiskeyPrice_TextChanged"/>
-        <TextBox x:Name="CognacPrice" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="185,525,0,0" TextChanged="CognacPrice_TextChanged"/>
-        <TextBox x:Name="VodkaPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,466,0,0" TextChanged="VodkaPeople_TextChanged"/>
-        <TextBox x:Name="WhiskeyPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,495,0,0" TextChanged="WhiskeyPeople_TextChanged"/>
-        <TextBox x:Name="CognacPeople" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Margin="369,525,0,0" TextChanged="CognacPeople_TextChanged"/>
-        <TextBlock x:Name="drunk" HorizontalAlignment="Left" Margin="35,446,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        -->
+                </StackPanel>
+            </Border>
+            
+            <!--BUTTON CALCULATE-->
+            <Button x:Name="ButtonCount"
+                Content="Рассчитать"
+                Click="Button_Click"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,10"
+                VerticalAlignment="Bottom"
+                Width="200"
+                Height="54"
+                Background="#FFF7BC05"
+                BorderBrush="Orange"
+                Foreground="#FFF74205"
+                FontSize="24"
+                FontFamily="Comic Sans MS"
+                FontWeight="Bold"
+                BorderThickness="4,2">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius"
+                            Value="25" />
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>

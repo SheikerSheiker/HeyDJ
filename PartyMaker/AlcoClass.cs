@@ -16,7 +16,7 @@ namespace PartyMaker
             double sliderValue;
             sliderValue = ((Name == "Пиво") || (Name == "Сидр")) ? beerSliderValue : alcoSliderValue;
             int intCountBottle = Convert.ToInt32(Math.Ceiling(sliderValue * Count / 0.5));
-            AlcoResult result = new AlcoResult { Name = Name, CountBottle = Count.ToString(), PriceBottle = Price.ToString(), FullPrice = (intCountBottle * Price).ToString()};
+            AlcoResult result = new AlcoResult { Name = Name, CountBottle = Convert.ToInt32(Math.Ceiling(sliderValue * Count / 0.5)).ToString(), PriceBottle = Price.ToString(), FullPrice = (intCountBottle * Price).ToString()};
             return result;
         }
     }
