@@ -8,7 +8,8 @@
         Title="PartyMaker"
         Window.SizeToContent="Height"
         Width="560"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <!--This is the Style Beer TB-->
         <Style x:Key="BeerTB1"

@@ -37,7 +37,6 @@ namespace PartyMaker
         public Result(List<Alco> allAlco, double alcoSliderValue, double beerSliderValue)
         {
             InitializeComponent();
-
             List<AlcoResult> results = new List<AlcoResult>();
             int total = 0;
 
@@ -47,14 +46,24 @@ namespace PartyMaker
             }
             foreach (var item in results)
             {
-                total += int.Parse(item.FullPrice);
+                //string fullPrice = item.FullPrice.Remove(item.FullPrice.Length - 2);
+                //while (fullPrice.Contains(' '))
+                //{
+                //    fullPrice = fullPrice.Remove(fullPrice.IndexOf(' '),1);
+                //}
+                string fullPrice = "";
+                for (int i = 0; i < item.FullPrice.Length - 2; i++)
+                {
+                    if (Char.IsDigit(item.FullPrice[i]))
+                        fullPrice += item.FullPrice[i];
+                }
+                total += int.Parse(fullPrice);
             }
 
             ListViewResults.ItemsSource = results;
             TotalPrice(total);
-            this.SizeToContent = SizeToContent.Height;
         }
 
-        public void TotalPrice (int total) => TotalBlock.Text = $"Итоговая стоимость: {total:C0}";
+        public void TotalPrice(int total) => TotalBlock.Text = $"Итоговая стоимость: {total:C0}";
     }
 }

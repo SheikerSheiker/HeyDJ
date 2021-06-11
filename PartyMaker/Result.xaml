@@ -6,10 +6,83 @@
         xmlns:local="clr-namespace:PartyMaker"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Результат" Width="470" SizeToContent="Height"  ResizeMode="NoResize">
+        Title="Результат" Window.SizeToContent="Height" Width="500" ResizeMode="NoResize">
     <Grid>
         <Rectangle Fill="#FFFFD374"/>
         <StackPanel>
+            <Border BorderBrush="#FFFF9301" BorderThickness="0, 0, 0, 2">
+                <Grid Background="#FFFFD876">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="Drinks" Width="78" />
+                        <ColumnDefinition x:Name="CountBottle" Width="174"/>
+                        <ColumnDefinition x:Name="PriceBottle" Width="140"/>
+                        <ColumnDefinition x:Name="FullPrice" Width="94"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="Напиток" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="5, 2"
+                               Foreground="Black"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               Padding="2"/>
+                    </StackPanel>
+                    <Border BorderBrush="#FFFF9301" BorderThickness="2, 0, 2, 0" Grid.Column="1">
+                        <TextBlock Text="Количество бутылок" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="5, 2"
+                               Foreground="Black"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               Padding="2"/>
+                    </Border>
+                    <Border BorderBrush="#FFFF9301" BorderThickness="0, 0, 2, 0" Grid.Column="2">
+                        <TextBlock Text="Цена за бутылку" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="5, 2"
+                               Foreground="Black"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               Padding="2"/>
+                    </Border>
+                    <StackPanel Grid.Column="3">
+                        <TextBlock Text="Стоимость" 
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="5, 2"
+                               Foreground="Black"
+                               FontSize="16"
+                               FontWeight="Medium"
+                               Padding="2"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <Border BorderBrush="#FFFF9301" BorderThickness="0, 0, 0, 2">
+                <Grid Background="#FFFFC64B">
+                    <ListView x:Name="ListViewResults" HorizontalAlignment="Left" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="{Binding ElementName=Drinks, Path=Width}"/>
+                                        <ColumnDefinition Width="{Binding ElementName=CountBottle, Path=Width}"/>
+                                        <ColumnDefinition Width="{Binding ElementName=PriceBottle, Path=Width}"/>
+                                        <ColumnDefinition Width="{Binding ElementName=FullPrice, Path=Width}"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="{Binding Name}" Grid.Column="0" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Height="auto"/>
+                                    <TextBlock Text="{Binding CountBottle}" Grid.Column="1" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Height="auto"/>
+                                    <TextBlock Text="{Binding PriceBottle}" Grid.Column="2" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Height="auto"/>
+                                    <TextBlock Text="{Binding FullPrice}" Grid.Column="3" Foreground="Black" FontSize="14" HorizontalAlignment="Center" Height="auto"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Border>
+            <!--
             <ListView x:Name="ListViewResults" VerticalAlignment="Top" FontSize="16" Height="auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center" HorizontalContentAlignment="Center" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled">
                 <ListView.View>
                     <GridView AllowsColumnReorder="False" >
@@ -30,6 +103,8 @@
                     </GridView>
                 </ListView.View>
             </ListView>
+            
+            -->
             <Border BorderBrush="#FFEB730A" BorderThickness="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="auto" Margin="0, 30, 0, 10" Padding="20, 0, 20, 0" CornerRadius="25">
                 <TextBlock x:Name="TotalBlock" FontSize="18" FontWeight="Medium" Width="Auto" Foreground="#FFF61F05" FontFamily="Berlin Sans FB"></TextBlock>
 
