@@ -134,6 +134,8 @@
         <!--This is the Style AlcoName TB-->
         <Style x:Key="AlcoNameTB"
                TargetType="TextBox">
+            <EventSetter Event="PreviewKeyDown" Handler="AlcoName_PreviewKeyDown"/>
+            <EventSetter Event="TextChanged" Handler="AlcoName_TextChanged"/>
             <Setter Property="Margin"
                     Value="5, 3, 25, 3" />
             <Setter Property="Background">
@@ -195,6 +197,8 @@
         <!--This is the Style AlcoPrice TB-->
         <Style x:Key="AlcoPriceTB"
                TargetType="TextBox">
+            <EventSetter Event="PreviewTextInput" Handler="AlcoPrice_PreviewTextInput"/>
+            <EventSetter Event="TextChanged" Handler="AlcoPrice_TextChanged"/>
             <Setter Property="Margin"
                     Value="15, 3, 15, 3" />
             <Setter Property="Background">
@@ -255,6 +259,8 @@
         <!--This is the Style AlcoCount TB-->
         <Style x:Key="AlcoCountTB"
                TargetType="TextBox">
+            <EventSetter Event="PreviewTextInput" Handler="AlcoCount_PreviewTextInput"/>
+            <EventSetter Event="TextChanged" Handler="AlcoCount_TextChanged"/>
             <Setter Property="Margin" Value="25, 3, 5, 3" />
             <Setter Property="Background">
                 <Setter.Value>
@@ -1098,9 +1104,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Name -->
                         <TextBox x:Name="Price1" Style="{StaticResource AlcoPriceTB}"
-                                     Grid.Column="1" Grid.Row="0"
-                         PreviewTextInput="AlcoPrice_PreviewTextInput"
-                         TextChanged="AlcoPrice_TextChanged"/>
+                                     Grid.Column="1" Grid.Row="0"/>
                         <!--This TextBlock is a Watermark Price-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1125,9 +1129,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Price -->
                         <TextBox x:Name="Count1" Style="{StaticResource AlcoCountTB}"
-                                 Grid.Column="2" Grid.Row="0"
-                         PreviewTextInput="AlcoCount_PreviewTextInput"
-                         TextChanged="AlcoCount_TextChanged"/>
+                                 Grid.Column="2" Grid.Row="0"/>
                         <!--This TextBlock is a Watermark Count-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1181,9 +1183,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Name -->
                         <TextBox x:Name="Price2" Style="{StaticResource AlcoPriceTB}"
-                                     Grid.Column="1" Grid.Row="1"
-                         PreviewTextInput="AlcoPrice_PreviewTextInput"
-                         TextChanged="AlcoPrice_TextChanged"/>
+                                     Grid.Column="1" Grid.Row="1"/>
                         <!--This TextBlock is a Watermark Price-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1208,9 +1208,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Price -->
                         <TextBox x:Name="Count2" Style="{StaticResource AlcoCountTB}"
-                                 Grid.Column="2" Grid.Row="1"
-                         PreviewTextInput="AlcoCount_PreviewTextInput"
-                         TextChanged="AlcoCount_TextChanged"/>
+                                 Grid.Column="2" Grid.Row="1"/>
                         <!--This TextBlock is a Watermark Count-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1264,9 +1262,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Name -->
                         <TextBox x:Name="Price3" Style="{StaticResource AlcoPriceTB}"
-                                     Grid.Column="1" Grid.Row="2"
-                         PreviewTextInput="AlcoPrice_PreviewTextInput"
-                         TextChanged="AlcoPrice_TextChanged"/>
+                                     Grid.Column="1" Grid.Row="2"/>
                         <!--This TextBlock is a Watermark Price-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1291,9 +1287,7 @@
                         </TextBlock>
                         <!--End TextBlock Watermark Price -->
                         <TextBox x:Name="Count3" Style="{StaticResource AlcoCountTB}"
-                                 Grid.Column="2" Grid.Row="2"
-                         PreviewTextInput="AlcoCount_PreviewTextInput"
-                         TextChanged="AlcoCount_TextChanged"/>
+                                 Grid.Column="2" Grid.Row="2"/>
                         <!--This TextBlock is a Watermark Count-->
                         <TextBlock>
                             <TextBlock.Style>

@@ -104,5 +104,20 @@ namespace PartyMaker
             if (int.Parse((sender as TextBox).Text) > 500)
                 (sender as TextBox).Text = "500";
         }
+
+        private void AlcoName_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            //Блокировать пробел, если стоим на первом месте и символ пробел, или если символ пробел и прошлый был пробел
+            if ( (((sender as TextBox).SelectionStart == 0) && (e.Key == Key.Space)) || ((e.Key == Key.Space) && ((sender as TextBox).Text[(sender as TextBox).SelectionStart - 1] == ' ')) )
+                e.Handled = true;
+        }
+        private void AlcoName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            while ((sender as TextBox).Text.Contains("  "))
+            {
+                (sender as TextBox).Text = (sender as TextBox).Text.Replace("  ", " ");
+            }
+            (sender as TextBox).Text = (sender as TextBox).Text.Trim();
+        }
     }
 }
