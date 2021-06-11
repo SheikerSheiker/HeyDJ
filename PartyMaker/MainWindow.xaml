@@ -147,6 +147,7 @@
             </Setter>
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="MaxLength" Value="14"/>
             <Setter Property="FontWeight" Value="Medium" />
             <Setter Property="Foreground" Value="#FFC50000" />
             <Setter Property="BorderBrush" Value="#FFFFABAB" />
@@ -1071,8 +1072,7 @@
                         
                         <!--BEGIN GRID-->
                         <TextBox x:Name="Name1" Style="{StaticResource AlcoNameTB}"
-                                 Grid.Column="0" Grid.Row="0"
-                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                                 Grid.Column="0" Grid.Row="0"/>
                         <!--This TextBlock is a Watermark Name-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1155,8 +1155,7 @@
 
                         <!--***ROW 2***-->
                         <TextBox x:Name="Name2" Style="{StaticResource AlcoNameTB}"
-                                 Grid.Column="0" Grid.Row="1"
-                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                                 Grid.Column="0" Grid.Row="1"/>
                         <!--This TextBlock is a Watermark Name-->
                         <TextBlock>
                             <TextBlock.Style>
@@ -1239,8 +1238,7 @@
 
                         <!--***ROW 3***-->
                         <TextBox x:Name="Name3" Style="{StaticResource AlcoNameTB}"
-                                 Grid.Column="0" Grid.Row="2"
-                                 PreviewTextInput="AlcoName_PreviewTextInput"/>
+                                 Grid.Column="0" Grid.Row="2"/>
                         <!--This TextBlock is a Watermark Name-->
                         <TextBlock>
                             <TextBlock.Style>

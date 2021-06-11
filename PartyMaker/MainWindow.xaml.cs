@@ -56,6 +56,8 @@ namespace PartyMaker
                 allAlco.Add(alco3);
             }
 
+            
+
 
 
             Result result = new Result(allAlco, AlcoSlider.Value, BeerSlider.Value);
@@ -101,12 +103,6 @@ namespace PartyMaker
             }
             if (int.Parse((sender as TextBox).Text) > 500)
                 (sender as TextBox).Text = "500";
-        }
-
-        private void AlcoName_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            if ((sender as TextBox).Text.Length > 12)
-                e.Handled = true;
         }
     }
 }
