@@ -12,4 +12,6 @@ Pati Kalkulator
 Основная ЦА: Люди в возрасте от 18 до 35.
 https://trello.com/b/4sRu4bB3
 
+Ссылка на продукт: https://disk.yandex.ru/d/lEDjerHX9ZOLFw
+
 ![image](https://user-images.githubusercontent.com/81217256/120783260-47eb8f00-c544-11eb-96f1-e72696003063.png)
