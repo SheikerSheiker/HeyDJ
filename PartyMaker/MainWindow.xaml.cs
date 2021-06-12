@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
 
 namespace PartyMaker
 {
@@ -104,13 +105,18 @@ namespace PartyMaker
             if (int.Parse((sender as TextBox).Text) > 500)
                 (sender as TextBox).Text = "500";
         }
-
+        private void CharSpace_PreviewKeyDown (object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+                e.Handled = true;
+        }
         private void AlcoName_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             //Блокировать пробел, если стоим на первом месте и символ пробел, или если символ пробел и прошлый был пробел
             if ( (((sender as TextBox).SelectionStart == 0) && (e.Key == Key.Space)) || ((e.Key == Key.Space) && ((sender as TextBox).Text[(sender as TextBox).SelectionStart - 1] == ' ')) )
                 e.Handled = true;
         }
+        //Удаление из вставки двойных пробелов и пробелов в начале и конце
         private void AlcoName_TextChanged(object sender, TextChangedEventArgs e)
         {
             while ((sender as TextBox).Text.Contains("  "))
@@ -118,6 +124,18 @@ namespace PartyMaker
                 (sender as TextBox).Text = (sender as TextBox).Text.Replace("  ", " ");
             }
             (sender as TextBox).Text = (sender as TextBox).Text.Trim();
+        }
+
+        private void BeerSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            double size;
+            //ComboBox comboBox = (ComboBox)sender;
+            //ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            //MessageBox.Show(selectedItem.Content.ToString());
+            //size = double.Parse(selectedItem.Content.ToString().Replace(" л", ""));
+            size = double.Parse(BeerSize.Text.Replace(" л", ""));
+            //size = double.Parse(((ComboBoxItem)(sender as ComboBox).SelectedItem).Content.ToString().Replace(" л", ""));
+            BeerPriceWatermark.Text = $"(Цена за {size} л.)";
         }
     }
 }
