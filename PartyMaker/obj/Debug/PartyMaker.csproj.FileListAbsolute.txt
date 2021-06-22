@@ -71,7 +71,6 @@ C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\Part
 C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cache
 C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
 =======
-=======
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe.config
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.pdb
@@ -92,3 +91,4 @@ C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Pa
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Result.baml
 >>>>>>> Alex
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\App.baml

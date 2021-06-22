@@ -881,7 +881,7 @@
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=BeerPrice}"
+                                                <DataTrigger Binding="{Binding Text, ElementName=WinePrice}"
                                                          Value="">
                                                     <Setter Property="Visibility" Value="Visible" />
                                                 </DataTrigger>
@@ -916,7 +916,7 @@
                                             <Setter Property="VerticalAlignment" Value="Center"/>
                                             <Setter Property="Visibility" Value="Collapsed"/>
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Text, ElementName=BeerCount}"
+                                                <DataTrigger Binding="{Binding Text, ElementName=WineCount}"
                                                          Value="">
                                                     <Setter Property="Visibility" Value="Visible" />
                                                 </DataTrigger>
