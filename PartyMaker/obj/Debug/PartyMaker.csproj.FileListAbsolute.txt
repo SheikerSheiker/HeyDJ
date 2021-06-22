@@ -28,6 +28,7 @@ D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResou
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
+<<<<<<< Updated upstream
 C:\prog\kraken\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe.config
 C:\prog\kraken\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe
 C:\prog\kraken\HeyDJ\PartyMaker\bin\Debug\PartyMaker.pdb
@@ -43,8 +44,10 @@ C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cac
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
+<<<<<<< max
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
 C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\Result.baml
+<<<<<<< HEAD
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\Result.baml
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\App.baml
@@ -67,3 +70,25 @@ C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\Part
 C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\PartyMaker.Properties.Resources.resources
 C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cache
 C:\Users\ravil\Desktop\Test watermarks's and border tb\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
+=======
+=======
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe.config
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.exe
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\bin\Debug\PartyMaker.pdb
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csprojAssemblyReference.cache
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\MainWindow.g.cs
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\App.g.cs
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker_MarkupCompile.cache
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker_MarkupCompile.lref
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\MainWindow.baml
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.g.resources
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.Properties.Resources.resources
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResource.cache
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
+>>>>>>> Stashed changes
+>>>>>>> Auto stash before rebase of "origin/lera"
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Result.g.cs
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Result.baml
+>>>>>>> Alex

@@ -4,12 +4,20 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\
+=======
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\
+>>>>>>> Alex
 PartyMaker
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Project\PartyMaker\HeyDJ\PartyMaker\App.xaml
+=======
+C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\App.xaml
+>>>>>>> Alex
 21247428840
 
 7160056965
