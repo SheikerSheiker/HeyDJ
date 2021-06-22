@@ -1481,6 +1481,7 @@
                                 <!--End TextBlock Watermark Count -->
                             </Grid>
                         </Border>
+                        <Button x:Name="Load" Content="Button" Click="Load_Click_2"/>
                     </StackPanel>
                 </Border>
             </Grid>
@@ -1587,6 +1588,7 @@
 
                 </Border>
             </StackPanel>
+            <Button x:Name="Save" Content="Button" Click="Save_Click" HorizontalAlignment="Left" Margin="0,0,-0.4,0" Width="1134"/>
             <!--Конец вывода результата-->
         </StackPanel>
     </Grid>

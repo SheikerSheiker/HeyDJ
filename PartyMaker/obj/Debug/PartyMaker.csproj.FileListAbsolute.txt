@@ -92,3 +92,4 @@ C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Re
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\Result.baml
 >>>>>>> Alex
 C:\Users\Алексей\Desktop\кракеншел\HeyDJ\PartyMaker\obj\Debug\App.baml
+C:\prog\kraken\HeyDJ\PartyMaker\obj\Debug\App.baml
