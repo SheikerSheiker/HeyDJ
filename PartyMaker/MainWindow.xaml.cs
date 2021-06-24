@@ -217,7 +217,7 @@ namespace PartyMaker
             f.Close();
         }
 
-        private void Load_Click_2(object sender, RoutedEventArgs e)
+        private void Load_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Text documents (.txt)|*.txt";
