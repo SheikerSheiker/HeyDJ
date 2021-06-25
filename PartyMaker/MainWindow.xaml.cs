@@ -436,27 +436,57 @@ namespace PartyMaker
             {
                 StreamReader f = new StreamReader(ofd.FileName);
                 alcoResults.Clear();
-                BeerSlider.Value = double.Parse(f.ReadLine());
-                BeerSize.Text = f.ReadLine();
-                BeerPrice.Text = f.ReadLine();
-                BeerCount.Text = f.ReadLine();
-                CiderSize.Text = f.ReadLine();
-                CiderPrice.Text = f.ReadLine();
-                CiderCount.Text = f.ReadLine();
-                WineSize.Text = f.ReadLine();
-                WinePrice.Text = f.ReadLine();
-                WineCount.Text = f.ReadLine();
-                AlcoSlider.Value = double.Parse(f.ReadLine());
-                Name1.Text = f.ReadLine();
-                Price1.Text = f.ReadLine();
-                Count1.Text = f.ReadLine();
-                Name2.Text = f.ReadLine();
-                Price2.Text = f.ReadLine();
-                Count2.Text = f.ReadLine();
-                Name3.Text = f.ReadLine();
-                Price3.Text = f.ReadLine();
-                Count3.Text = f.ReadLine();
-                f.Close();
+                try
+                {
+                    BeerSlider.Value = double.Parse(f.ReadLine());
+                    BeerSize.Text = f.ReadLine();
+                    BeerPrice.Text = f.ReadLine();
+                    BeerCount.Text = f.ReadLine();
+                    CiderSize.Text = f.ReadLine();
+                    CiderPrice.Text = f.ReadLine();
+                    CiderCount.Text = f.ReadLine();
+                    WineSize.Text = f.ReadLine();
+                    WinePrice.Text = f.ReadLine();
+                    WineCount.Text = f.ReadLine();
+                    AlcoSlider.Value = double.Parse(f.ReadLine());
+                    Name1.Text = f.ReadLine();
+                    Price1.Text = f.ReadLine();
+                    Count1.Text = f.ReadLine();
+                    Name2.Text = f.ReadLine();
+                    Price2.Text = f.ReadLine();
+                    Count2.Text = f.ReadLine();
+                    Name3.Text = f.ReadLine();
+                    Price3.Text = f.ReadLine();
+                    Count3.Text = f.ReadLine();
+                    f.Close();
+                }
+                catch (Exception)
+                {
+                    BeerSlider.Value = 2.5;
+                    BeerSize.Text = "0.5 л";
+                    BeerPrice.Text = "";
+                    BeerCount.Text = "";
+                    CiderSize.Text = "0.5 л";
+                    CiderPrice.Text = "";
+                    CiderCount.Text = "";
+                    WineSize.Text = "0.75 л";
+                    WinePrice.Text = "";
+                    WineCount.Text = "";
+                    AlcoSlider.Value = 0.5;
+                    Name1.Text = "";
+                    Price1.Text = "";
+                    Count1.Text = "";
+                    Name2.Text = "";
+                    Price2.Text = "";
+                    Count2.Text = "";
+                    Name3.Text = "";
+                    Price3.Text = "";
+                    Count3.Text = "";
+                    alcoResults.Clear();
+                    Calculate();
+                    MessageBox.Show("Неверный формат входных данных!");
+                }
+                
             }
             else MessageBox.Show("Файл не выбран");
         }
