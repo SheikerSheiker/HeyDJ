@@ -434,7 +434,7 @@
                             <Trigger Property="IsMouseOver"
                                      Value="True">
                                 <Setter Property="BorderBrush"
-                                        Value="#FFFFD432" />
+                                        Value="#FFEAB900" />
                             </Trigger>
                             <Trigger Property="IsFocused"
                                      Value="True">
@@ -470,6 +470,8 @@
                     Value="True" />
             <Setter Property="SelectionBrush"
                     Value="#FFEB8B2A" />
+            <Setter Property="IsTabStop"
+                    Value="False" />
             <EventSetter Event="GotFocus"
                          Handler="TextBox_GotFocus" />
             <EventSetter Event="SelectionChanged"
@@ -487,7 +489,8 @@
                     <Button x:Name="Save"
                             Margin="10, 5"
                             HorizontalAlignment="Left"
-                            Click="Save_Click">
+                            Click="Save_Click"
+                            IsTabStop="False">
                         <Button.Template>
                             <ControlTemplate>
                                 <!--Background="#FFFFD885"-->
@@ -499,7 +502,8 @@
                                         Padding="3">
                                     <Border.Effect>
                                         <DropShadowEffect ShadowDepth="3"
-                                                          Opacity="0.5" />
+                                                          Opacity="0.5"
+                                                          Color="#FF7F3200" />
                                     </Border.Effect>
                                     <StackPanel>
                                         <Image Source="Save.png"
@@ -512,7 +516,8 @@
                                                    HorizontalAlignment="Center">
                                             <TextBlock.Effect>
                                                 <DropShadowEffect ShadowDepth="2"
-                                                                  Opacity="0.5" />
+                                                                  Opacity="0.5"
+                                                                  Color="#FFBA3600" />
                                             </TextBlock.Effect>
                                         </TextBlock>
                                     </StackPanel>
@@ -534,10 +539,12 @@
                     <Button x:Name="Open"
                             HorizontalAlignment="Left"
                             Margin="5"
-                            Click="Open_Click">
+                            Click="Open_Click"
+                            IsTabStop="False">
                         <Button.Effect>
                             <DropShadowEffect Opacity="0.5"
-                                              ShadowDepth="3" />
+                                              ShadowDepth="3"
+                                              Color="#FF7F3200" />
                         </Button.Effect>
                         <Button.Template>
                             <ControlTemplate>
@@ -558,7 +565,8 @@
                                                    HorizontalAlignment="Center">
                                             <TextBlock.Effect>
                                                 <DropShadowEffect ShadowDepth="2"
-                                                                  Opacity="0.5" />
+                                                                  Opacity="0.5"
+                                                                  Color="#FFBA3600" />
                                             </TextBlock.Effect>
                                         </TextBlock>
                                     </StackPanel>
@@ -583,7 +591,13 @@
                        FontSize="48"
                        Foreground="#FFFF7A00"
                        FontWeight="Bold"
-                       FontFamily="Berlin Sans FB" />
+                       FontFamily="Berlin Sans FB">
+                    <Label.Effect>
+                        <DropShadowEffect Color="Red"
+                                          ShadowDepth="0"
+                                          BlurRadius="3" />
+                    </Label.Effect>
+                </Label>
             </Grid>
 
 
@@ -613,7 +627,8 @@
                                 LargeChange="0.5"
                                 TickFrequency="0.5"
                                 IsSnapToTickEnabled="True"
-                                ValueChanged="Slider_ValueChanged">
+                                ValueChanged="Slider_ValueChanged"
+                                TabIndex="0">
                             <Slider.Template>
                                 <ControlTemplate TargetType="{x:Type Slider}">
                                     <Grid>
@@ -652,11 +667,13 @@
                                                VerticalAlignment="Top">
                                             <Track.IncreaseRepeatButton>
                                                 <RepeatButton Command="Slider.IncreaseLarge"
-                                                              Opacity="0" />
+                                                              Opacity="0"
+                                                              IsTabStop="False" />
                                             </Track.IncreaseRepeatButton>
                                             <Track.DecreaseRepeatButton>
                                                 <RepeatButton   Command="Slider.DecreaseLarge"
-                                                                Opacity="0" />
+                                                                Opacity="0"
+                                                                IsTabStop="False" />
                                             </Track.DecreaseRepeatButton>
                                             <Track.Thumb>
                                                 <Thumb>
@@ -915,7 +932,8 @@
                                          Grid.Column="2"
                                          Grid.Row="0"
                                          PreviewTextInput="AlcoPrice_PreviewTextInput"
-                                         TextChanged="AlcoPrice_TextChanged" />
+                                         TextChanged="AlcoPrice_TextChanged"
+                                         TabIndex="2" />
                                 <!--End TB input Price-->
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock x:Name="BeerPriceWatermark"
@@ -951,7 +969,8 @@
                                           Grid.Row="0"
                                           Grid.Column="1"
                                           Margin="20, 7, 20, 7"
-                                          SelectionChanged="BeerSize_SelectionChanged">
+                                          SelectionChanged="BeerSize_SelectionChanged"
+                                          TabIndex="1">
                                     <ComboBoxItem Content="0.33 л" />
                                     <ComboBoxItem Content="0.5 л"
                                                   IsSelected="True" />
@@ -964,7 +983,8 @@
                                          Style="{StaticResource BeerTB1}"
                                          Grid.Column="3"
                                          PreviewTextInput="AlcoCount_PreviewTextInput"
-                                         TextChanged="AlcoCount_TextChanged" />
+                                         TextChanged="AlcoCount_TextChanged"
+                                         TabIndex="3" />
                                 <!--End TB input Count-->
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock Grid.Column="3">
@@ -1014,7 +1034,8 @@
                                          Style="{StaticResource BeerTB2}"
                                          Grid.Column="2"
                                          PreviewTextInput="AlcoPrice_PreviewTextInput"
-                                         TextChanged="AlcoPrice_TextChanged" />
+                                         TextChanged="AlcoPrice_TextChanged"
+                                         TabIndex="5" />
                                 <!--End TB input Price-->
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock x:Name="CiderPriceWatermark"
@@ -1050,7 +1071,8 @@
                                           Grid.Row="1"
                                           Grid.Column="1"
                                           Margin="20, 7, 20, 7"
-                                          SelectionChanged="CiderSize_SelectionChanged">
+                                          SelectionChanged="CiderSize_SelectionChanged"
+                                          TabIndex="4">
                                     <ComboBoxItem Content="0.33 л" />
                                     <ComboBoxItem Content="0.5 л"
                                                   IsSelected="True" />
@@ -1063,7 +1085,8 @@
                                          Style="{StaticResource BeerTB2}"
                                          Grid.Column="3"
                                          PreviewTextInput="AlcoCount_PreviewTextInput"
-                                         TextChanged="AlcoCount_TextChanged" />
+                                         TextChanged="AlcoCount_TextChanged"
+                                         TabIndex="6" />
                                 <!--End TB input Count-->
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock Grid.Row="1"
@@ -1113,7 +1136,8 @@
                                          Style="{StaticResource WineTB}"
                                          PreviewTextInput="AlcoPrice_PreviewTextInput"
                                          TextChanged="AlcoPrice_TextChanged"
-                                         Grid.Column="2" />
+                                         Grid.Column="2"
+                                         TabIndex="8" />
                                 <!--End TB input Price-->
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock x:Name="WinePriceWatermark"
@@ -1149,7 +1173,8 @@
                                           Grid.Row="2"
                                           Grid.Column="1"
                                           Margin="20, 7, 20, 7"
-                                          SelectionChanged="WineSize_SelectionChanged">
+                                          SelectionChanged="WineSize_SelectionChanged"
+                                          TabIndex="7">
                                     <ComboBoxItem Content="0.33 л" />
                                     <ComboBoxItem Content="0.5 л" />
                                     <ComboBoxItem Content="0.75 л"
@@ -1163,7 +1188,8 @@
                                          Style="{StaticResource WineTB}"
                                          PreviewTextInput="AlcoCount_PreviewTextInput"
                                          TextChanged="AlcoCount_TextChanged"
-                                         Grid.Column="3" />
+                                         Grid.Column="3"
+                                         TabIndex="9" />
                                 <!--End TB input Count-->
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock Grid.Row="2"
@@ -1225,7 +1251,8 @@
                                 IsSnapToTickEnabled="True"
                                 VerticalAlignment="Top"
                                 Margin="0, 15, 0, 15"
-                                ValueChanged="Slider_ValueChanged">
+                                ValueChanged="Slider_ValueChanged"
+                                TabIndex="20">
                             <Slider.Template>
                                 <ControlTemplate TargetType="{x:Type Slider}">
                                     <Grid>
@@ -1266,11 +1293,13 @@
                                                VerticalAlignment="Top">
                                             <Track.IncreaseRepeatButton>
                                                 <RepeatButton Command="Slider.IncreaseLarge"
-                                                              Opacity="0" />
+                                                              Opacity="0"
+                                                              IsTabStop="False" />
                                             </Track.IncreaseRepeatButton>
                                             <Track.DecreaseRepeatButton>
                                                 <RepeatButton   Command="Slider.DecreaseLarge"
-                                                                Opacity="0" />
+                                                                Opacity="0"
+                                                                IsTabStop="False" />
                                             </Track.DecreaseRepeatButton>
                                             <Track.Thumb>
                                                 <Thumb>
@@ -1519,7 +1548,8 @@
                                 <TextBox x:Name="Name1"
                                          Style="{StaticResource AlcoNameTB}"
                                          Grid.Column="0"
-                                         Grid.Row="0" />
+                                         Grid.Row="0"
+                                         TabIndex="21" />
                                 <!--This TextBlock is a Watermark Name-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1558,7 +1588,8 @@
                                 <TextBox x:Name="Price1"
                                          Style="{StaticResource AlcoPriceTB}"
                                          Grid.Column="1"
-                                         Grid.Row="0" />
+                                         Grid.Row="0"
+                                         TabIndex="22" />
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1595,7 +1626,8 @@
                                 <TextBox x:Name="Count1"
                                          Style="{StaticResource AlcoCountTB}"
                                          Grid.Column="2"
-                                         Grid.Row="0" />
+                                         Grid.Row="0"
+                                         TabIndex="23" />
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1636,7 +1668,8 @@
                                 <TextBox x:Name="Name2"
                                          Style="{StaticResource AlcoNameTB}"
                                          Grid.Column="0"
-                                         Grid.Row="1" />
+                                         Grid.Row="1"
+                                         TabIndex="24" />
                                 <!--This TextBlock is a Watermark Name-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1675,7 +1708,8 @@
                                 <TextBox x:Name="Price2"
                                          Style="{StaticResource AlcoPriceTB}"
                                          Grid.Column="1"
-                                         Grid.Row="1" />
+                                         Grid.Row="1"
+                                         TabIndex="25" />
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1712,7 +1746,8 @@
                                 <TextBox x:Name="Count2"
                                          Style="{StaticResource AlcoCountTB}"
                                          Grid.Column="2"
-                                         Grid.Row="1" />
+                                         Grid.Row="1"
+                                         TabIndex="26" />
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1753,7 +1788,8 @@
                                 <TextBox x:Name="Name3"
                                          Style="{StaticResource AlcoNameTB}"
                                          Grid.Column="0"
-                                         Grid.Row="2" />
+                                         Grid.Row="2"
+                                         TabIndex="27" />
                                 <!--This TextBlock is a Watermark Name-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1792,7 +1828,8 @@
                                 <TextBox x:Name="Price3"
                                          Style="{StaticResource AlcoPriceTB}"
                                          Grid.Column="1"
-                                         Grid.Row="2" />
+                                         Grid.Row="2"
+                                         TabIndex="28" />
                                 <!--This TextBlock is a Watermark Price-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -1829,7 +1866,8 @@
                                 <TextBox x:Name="Count3"
                                          Style="{StaticResource AlcoCountTB}"
                                          Grid.Column="2"
-                                         Grid.Row="2" />
+                                         Grid.Row="2"
+                                         TabIndex="29" />
                                 <!--This TextBlock is a Watermark Count-->
                                 <TextBlock>
                                     <TextBlock.Style>
@@ -2009,7 +2047,7 @@
                         CornerRadius="15">
                     <TextBox x:Name="EachBlock"
                              Style="{StaticResource OutputResult}"
-                             Text="0,00 ₽"
+                             Text="С каждого по 0,00 ₽"
                              FontSize="18"
                              FontWeight="Medium"
                              Foreground="#FFFF5540"
