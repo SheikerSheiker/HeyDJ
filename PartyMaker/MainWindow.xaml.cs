@@ -468,5 +468,20 @@ namespace PartyMaker
             else
                 Calculate();
         }
+
+        private bool isFocused = false;
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            isFocused = true;
+        }
+
+        private void TextBox_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if (isFocused)
+            {
+                isFocused = false;
+                (sender as TextBox).SelectAll();
+            }
+        }
     }
 }

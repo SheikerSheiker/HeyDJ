@@ -470,6 +470,10 @@
                     Value="True" />
             <Setter Property="SelectionBrush"
                     Value="#FFEB8B2A" />
+            <EventSetter Event="GotFocus"
+                         Handler="TextBox_GotFocus" />
+            <EventSetter Event="SelectionChanged"
+                         Handler="TextBox_SelectionChanged" />
         </Style>
     </Window.Resources>
 
