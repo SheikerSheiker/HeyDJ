@@ -2027,7 +2027,7 @@
                         Height="auto"
                         Margin="0, 30, 0, 10"
                         Padding="20, 0, 20, 0"
-                        CornerRadius="25">
+                        CornerRadius="20">
                     <TextBox x:Name="TotalBlock"
                              Style="{StaticResource OutputResult}"
                              Text="0,00 ₽"
