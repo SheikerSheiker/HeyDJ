@@ -34,34 +34,34 @@ namespace PartyMaker
 
     public partial class Result : Window
     {
-        public Result(List<Alco> allAlco, double alcoSliderValue, double beerSliderValue)
+        public Result()
         {
             InitializeComponent();
-            List<AlcoResult> results = new List<AlcoResult>();
-            int total = 0;
+            //List<AlcoResult> results = new List<AlcoResult>();
+            //int total = 0;
 
-            foreach (var item in allAlco)
-            {
-                results.Add(item.TransformToResult(alcoSliderValue, beerSliderValue));
-            }
-            foreach (var item in results)
-            {
-                //string fullPrice = item.FullPrice.Remove(item.FullPrice.Length - 2);
-                //while (fullPrice.Contains(' '))
-                //{
-                //    fullPrice = fullPrice.Remove(fullPrice.IndexOf(' '),1);
-                //}
-                string fullPrice = "";
-                for (int i = 0; i < item.FullPrice.Length - 2; i++)
-                {
-                    if (Char.IsDigit(item.FullPrice[i]))
-                        fullPrice += item.FullPrice[i];
-                }
-                total += int.Parse(fullPrice);
-            }
+            //foreach (var item in allAlco)
+            //{
+            //    results.Add(item.TransformToResult(alcoSliderValue, beerSliderValue));
+            //}
+            //foreach (var item in results)
+            //{
+            //    //string fullPrice = item.FullPrice.Remove(item.FullPrice.Length - 2);
+            //    //while (fullPrice.Contains(' '))
+            //    //{
+            //    //    fullPrice = fullPrice.Remove(fullPrice.IndexOf(' '),1);
+            //    //}
+            //    string fullPrice = "";
+            //    for (int i = 0; i < item.FullPrice.Length - 2; i++)
+            //    {
+            //        if (Char.IsDigit(item.FullPrice[i]))
+            //            fullPrice += item.FullPrice[i];
+            //    }
+            //    total += int.Parse(fullPrice);
+            //}
 
-            ListViewResults.ItemsSource = results;
-            TotalPrice(total);
+            //ListViewResults.ItemsSource = results;
+            //TotalPrice(total);
         }
 
         public void TotalPrice(int total) => TotalBlock.Text = $"Итоговая стоимость: {total:C0}";

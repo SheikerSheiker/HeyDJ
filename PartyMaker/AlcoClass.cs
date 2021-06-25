@@ -1,31 +1,88 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PartyMaker
 {
-    public class Alco
+    public class AlcoResult : INotifyPropertyChanged
     {
-        public string Name { get; set; }
-        public int Price { get; set; }
-        public int Count { get; set; }
-        public AlcoResult TransformToResult(double alcoSliderValue, double beerSliderValue)
+        private string name;
+        private string countBottle;
+        private string priceBottle;
+        private string fullPrice;
+        private string eachPrice;
+        public string Count { get; set; }
+        public string Name
         {
-            double sliderValue;
-            sliderValue = ((Name == "Пиво") || (Name == "Сидр")) ? beerSliderValue : alcoSliderValue;
-            int intCountBottle = Convert.ToInt32(Math.Ceiling(sliderValue * Count / 0.5));
-            AlcoResult result = new AlcoResult { Name = Name, CountBottle = Convert.ToInt32(Math.Ceiling(sliderValue * Count / 0.5)).ToString(), PriceBottle = String.Format("{0:C0}", Price), FullPrice = String.Format("{0:C0}", intCountBottle * Price)};
-            return result;
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
         }
-    }
+        public string CountBottle
+        {
+            get
+            {
+                return countBottle;
+            }
+            set
+            {
+                countBottle = value;
+                OnPropertyChanged("CountBottle");
+            }
+        }
+        public string PriceBottle
+        {
+            get
+            {
+                return priceBottle;
+            }
+            set
+            {
+                priceBottle = value;
+                OnPropertyChanged("PriceBottle");
+            }
+        }
+        public string FullPrice
+        {
+            get
+            {
+                return fullPrice;
+            }
+            set
+            {
+                fullPrice = value;
+                OnPropertyChanged("FullPrice");
+            }
+        }
+        public string EachPrice
+        {
+            get
+            {
+                return eachPrice;
+            }
+            set
+            {
+                eachPrice = value;
+                OnPropertyChanged("EachPrice");
+            }
+        }
 
-    public class AlcoResult
-    {
-        public string Name { get; set; }
-        public string CountBottle { get; set; }
-        public string PriceBottle { get; set; }
-        public string FullPrice { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }
+
     }
 }

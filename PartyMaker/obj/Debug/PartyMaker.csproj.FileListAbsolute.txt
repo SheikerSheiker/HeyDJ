@@ -16,3 +16,4 @@ D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.GenerateResou
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.csproj.CoreCompileInputs.cache
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.exe
 D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\PartyMaker.pdb
+D:\Project\PartyMaker\HeyDJ\PartyMaker\obj\Debug\GeneratedInternalTypeHelper.g.cs
