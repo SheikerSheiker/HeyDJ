@@ -12,8 +12,17 @@ using PartyMaker_NET_Core.ViewModels.Base;
 
 namespace PartyMaker_NET_Core.ViewModels
 {
+
     internal class SimpleWindowViewModel : ViewModel
     {
+        #region Метод проверки открыто ли окно
+        public static bool IsWindowOpen<T>(string name = "") where T : Window
+        {
+            return string.IsNullOrEmpty(name)
+               ? Application.Current.Windows.OfType<T>().Any()
+               : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
+        }
+        #endregion
         #region Команды
         #region Сохранение профиля
         public ICommand SaveProfileCommand { get; }
@@ -65,6 +74,7 @@ namespace PartyMaker_NET_Core.ViewModels
             });
         }
         #endregion
+        #region Открытие окна справки
         public ICommand OpenReferenceWindowCommand { get; }
         public bool CanOpenReferenceWindowCommandExecute(object p) => true;
         public async void OnOpenReferenceWindowCommandExecuted(object p)
@@ -79,7 +89,7 @@ namespace PartyMaker_NET_Core.ViewModels
             });
         }
         #endregion
-
+        #endregion
 
         public SimpleWindowViewModel()
         {
