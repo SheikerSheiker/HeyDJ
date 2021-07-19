@@ -13,19 +13,70 @@
         <vm:SimpleWindowViewModel />
     </Window.DataContext>
     <Grid Background="#FFF1D8A2">
-        <DockPanel Height="50"
+        <DockPanel Height="86"
                    VerticalAlignment="Top">
+            <!--#region Кнопка сохранения профиля-->
             <Button Style="{StaticResource OpenBtnStyle}"
-                    DockPanel.Dock="Left">
-                abaldjfla
+                    Command="{Binding SaveProfileCommand}"
+                    DockPanel.Dock="Left"
+                    x:Name="SaveBtn">
+                <Button.Content>
+                    <StackPanel>
+                        <Image Source="..\..\Picture\Save.png"
+                               Height="46" />
+                        <TextBlock Text="Сохранить"
+                                   HorizontalAlignment="Center"
+                                   Margin="0, -5, 0, 0" />
+                    </StackPanel>
+                </Button.Content>
             </Button>
+            <!--#endregion-->
+            <!--#region Кнопка открытия профиля-->
             <Button Style="{StaticResource OpenBtnStyle}"
+                    Command="{Binding OpenProfileCommand}"
                     DockPanel.Dock="Left">
-                FGH
+                <Button.Content>
+                    <StackPanel Width="{Binding ElementName=SaveBtn, Path=ActualWidth}">
+                        <Image Source="..\..\Picture\Open.png"
+                               Height="46" />
+                        <TextBlock Text="Открыть"
+                                   Margin="0, -5, 0, 0"
+                                   HorizontalAlignment="Center"
+                                   Foreground="#FFE53A00" />
+                    </StackPanel>
+                </Button.Content>
             </Button>
-            <Button Style="{StaticResource OpenBtnStyle}" DockPanel.Dock="Right">
-                Svravka
+            <!--#endregion-->
+            <!--#region Кнопка справки-->
+            <Button Style="{StaticResource OpenBtnStyle}"
+                    Command="{Binding OpenReferenceWindowCommand}"
+                    DockPanel.Dock="Right">
+                <Button.Content>
+                    <StackPanel>
+                        <TextBlock Text="?"
+                                   RenderTransformOrigin="0.5, 0.5"
+                                   FontSize="64"
+                                   FontFamily="Arial"
+                                   LineHeight="1"
+                                   TextAlignment="Center">
+                            <TextBlock.RenderTransform>
+                                <TranslateTransform Y="-10" />
+                            </TextBlock.RenderTransform>
+                            <TextBlock.Effect>
+                                <DropShadowEffect BlurRadius="3"
+                                                  Opacity="1"
+                                                  ShadowDepth="0"
+                                                  Color="#FFAB5600" />
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        <TextBlock Text="Справка"
+                                   FontSize="20"
+                                   Margin="0, -32, 0, 0"
+                                   Foreground="#FFC03F00" />
+                    </StackPanel>
+                </Button.Content>
             </Button>
+            <!--#endregion-->
             <TextBlock Text="ПатиМейкер"
                        HorizontalAlignment="Center"
                        FontSize="48"

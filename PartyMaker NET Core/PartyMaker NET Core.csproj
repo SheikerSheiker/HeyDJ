@@ -8,7 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Picture\Open.png" />
+    <None Remove="Picture\Save.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Picture\Open.png" />
+    <Resource Include="Picture\Save.png" />
   </ItemGroup>
 
 </Project>
