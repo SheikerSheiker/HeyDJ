@@ -8,18 +8,29 @@
         xmlns:l="clr-namespace:PartyMaker_NET_Core"
         Title="PartyMaker"
         Height="450"
-        Width="800">
+        Width="1140">
     <Window.DataContext>
-        <vm:SimpleWindowViewModel />
+        <vm:MainWindowViewModel />
     </Window.DataContext>
     <Grid Background="#FFF1D8A2">
-        <DockPanel Height="86"
-                   VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0"
+              ClipToBounds="True"
+              VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="100" />
+            </Grid.ColumnDefinitions>
             <!--#region Кнопка сохранения профиля-->
-            <Button Style="{StaticResource OpenBtnStyle}"
+            <Button Style="{StaticResource FunctionBtnStyle}"
                     Command="{Binding SaveProfileCommand}"
-                    DockPanel.Dock="Left"
-                    x:Name="SaveBtn">
+                    x:Name="SaveBtn"
+                    Grid.Column="0">
                 <Button.Content>
                     <StackPanel>
                         <Image Source="..\..\Picture\Save.png"
@@ -32,9 +43,9 @@
             </Button>
             <!--#endregion-->
             <!--#region Кнопка открытия профиля-->
-            <Button Style="{StaticResource OpenBtnStyle}"
+            <Button Style="{StaticResource FunctionBtnStyle}"
                     Command="{Binding OpenProfileCommand}"
-                    DockPanel.Dock="Left">
+                    Grid.Column="1">
                 <Button.Content>
                     <StackPanel Width="{Binding ElementName=SaveBtn, Path=ActualWidth}">
                         <Image Source="..\..\Picture\Open.png"
@@ -48,9 +59,9 @@
             </Button>
             <!--#endregion-->
             <!--#region Кнопка справки-->
-            <Button Style="{StaticResource OpenBtnStyle}"
+            <Button Style="{StaticResource FunctionBtnStyle}"
                     Command="{Binding OpenReferenceWindowCommand}"
-                    DockPanel.Dock="Right">
+                    Grid.Column="3">
                 <Button.Content>
                     <StackPanel>
                         <TextBlock Text="?"
@@ -77,12 +88,32 @@
                 </Button.Content>
             </Button>
             <!--#endregion-->
-            <TextBlock Text="ПатиМейкер"
-                       HorizontalAlignment="Center"
-                       FontSize="48"
-                       Foreground="#FFFF7A00"
-                       FontWeight="Bold"
-                       FontFamily="Calibri" />
-        </DockPanel>
+            <StackPanel  Grid.Column="2"
+                         HorizontalAlignment="Center">
+                <TextBlock Text="ПатиМейкер"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Top"
+                           FontFamily="Calibri"
+                           Margin="0,0,0,-8"
+                           FontSize="48"
+                           Foreground="#FFFF7A00"
+                           FontWeight="Bold" />
+                <TextBlock Text="Расширенные настройки"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Bottom"
+                           FontSize="18"
+                           Foreground="#FF9D3900" />
+                <ToggleButton x:Name="ToogleSwitcher"
+                              Style="{StaticResource ToggleSwitchSetting}"
+                              Command="{Binding SwitchingModesCommand}"
+                              CommandParameter="{Binding ElementName=ToogleSwitcher, Path=IsChecked}"
+                              IsThreeState="False"
+                              IsChecked="False">
+                </ToggleButton>
+            </StackPanel>
+        </Grid>
+        <Frame Grid.Row="1"
+               Content="{Binding CurrentPage}"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

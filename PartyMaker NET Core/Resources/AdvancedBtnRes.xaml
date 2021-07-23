@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:PartyMaker_NET_Core.ViewModels">
+
+    <!--#region Кнопка добавления-->
+    
+    <!--#endregion-->
+</ResourceDictionary>

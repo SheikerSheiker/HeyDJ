@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Picture\Open.png" />
     <Resource Include="Picture\Save.png" />
   </ItemGroup>

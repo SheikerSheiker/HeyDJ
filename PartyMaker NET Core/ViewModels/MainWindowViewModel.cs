@@ -5,24 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using Microsoft.Win32;
 using PartyMaker_NET_Core.Commands.Base;
+using PartyMaker_NET_Core.Pages;
 using PartyMaker_NET_Core.ViewModels.Base;
 
 namespace PartyMaker_NET_Core.ViewModels
 {
 
-    internal class SimpleWindowViewModel : ViewModel
+    internal class MainWindowViewModel : ViewModel
     {
-        #region Метод проверки открыто ли окно
-        public static bool IsWindowOpen<T>(string name = "") where T : Window
-        {
-            return string.IsNullOrEmpty(name)
-               ? Application.Current.Windows.OfType<T>().Any()
-               : Application.Current.Windows.OfType<T>().Any(w => w.Name.Equals(name));
-        }
-        #endregion
         #region Команды
         #region Сохранение профиля
         public ICommand SaveProfileCommand { get; }
@@ -89,15 +83,54 @@ namespace PartyMaker_NET_Core.ViewModels
             });
         }
         #endregion
+        #region Переключение страниц
+        public ICommand SwitchingModesCommand { get; }
+        public bool CanSwitchingModesCommandExecute(object p) => true;
+        public async void OnSwitchingModesCommandExecuted (object p)
+        {
+            await Task.Run(() =>
+            {
+                CurrentPage = ((bool) p) ? advancedPage : simplePage;
+            });
+        }
+        #endregion
         #endregion
 
-        public SimpleWindowViewModel()
+        #region Поля
+        private readonly Page simplePage;
+        private readonly Page advancedPage;
+        #region Текущая страница
+        private Page _currentPage;
+        public Page CurrentPage
+        {
+            get => _currentPage;
+            set => Set(ref _currentPage, value);
+        }
+        #endregion
+        //#region Кнопка переключателя настроек
+        //private bool _setting = false;
+        //public bool Setting
+        //{
+        //    get => _setting;
+        //    set
+        //    {
+        //        Set(ref _setting, value);
+        //    }
+        //}
+        //#endregion
+        #endregion
+        public MainWindowViewModel()
         {
             #region Инициализация комманд
             SaveProfileCommand = new LambdaCommand(OnSaveProfileCommandExecuted, CanSaveProfileCommandExecute);
             OpenProfileCommand = new LambdaCommand(OnOpenProfileCommandExecuted, CanOpenProfileCommandExecute);
             OpenReferenceWindowCommand = new LambdaCommand(OnOpenReferenceWindowCommandExecuted, CanOpenReferenceWindowCommandExecute);
+            SwitchingModesCommand = new LambdaCommand(OnSwitchingModesCommandExecuted, CanSwitchingModesCommandExecute);
             #endregion
+
+            simplePage = new SimplePage();
+            advancedPage = new AdvancedPage();
+            CurrentPage = simplePage;
         }
     }
 }
