@@ -13,8 +13,13 @@ namespace PartyMaker_NET_Core.Models
         public object Convert(object value, Type targetType, object parameter,
             System.Globalization.CultureInfo culture)
         {
-            // Возвращаем строку в формате 123.456.789 руб.
-            return ((double)value).ToString("#,###.##", culture) + " ₽";
+            // Возвращаем строку в формате 123.456.789,01 ₽
+            //return ((double)value).ToString("#,###.##", culture) + " ₽";
+            if (value == null)
+                return " ₽";
+            string val = value.ToString();
+            return string.Format(val, "#,###.##", culture) + " ₽";
+            //return ((double)value).ToString("#,###.##", culture) + " ₽";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter,

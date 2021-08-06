@@ -9,7 +9,7 @@
 
                 <ResourceDictionary Source="Resources\Colors.xaml" />
                 <ResourceDictionary Source="Resources\BtnRes.xaml" />
-                
+                <ResourceDictionary Source="Resources\AdvancedBtnRes.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

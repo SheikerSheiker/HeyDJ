@@ -10,25 +10,41 @@ namespace PartyMaker_NET_Core.Models
     class Alco
     {
         public string Title { get; set; }
-        public double Price { get; set; }
-        public Alco(string Title, double Price)
+        // "Истинное" свойство
+        double _price;
+        string _priceString;
+        public double Price
         {
-            this.Title = Title;
-            this.Price = Price;
+            get => _price;
+            set
+            {
+                _price = value;
+
+                if (!double.TryParse(PriceString, out double price) ||
+                    price != value)
+                {
+                    PriceString = value.ToString();
+                }
+            }
         }
-        public Alco()
+
+        // Свойство для строкового представления
+        public string PriceString
         {
-
+            get => _priceString;
+            set
+            {
+                if (double.TryParse(value, out double price))
+                {
+                    _priceString = value;
+                    if (Price != price)
+                    {
+                        Price = price;
+                    }
+                }
+                //else
+                //    RaisePropertyChanged();
+            }
         }
-
     }
-    //class PairAlcoAndSize
-    //{
-    //    Alco alco;
-    //    double size;
-    //}
-    //class Person
-    //{
-    //    ObservableCollection<PairAlcoAndSize> AllAlco = new ObservableCollection<PairAlcoAndSize>();
-    //}
 }

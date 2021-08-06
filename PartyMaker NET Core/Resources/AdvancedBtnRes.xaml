@@ -3,6 +3,193 @@
                     xmlns:vm="clr-namespace:PartyMaker_NET_Core.ViewModels">
 
     <!--#region Кнопка добавления-->
-    
+    <Style x:Key="FocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="2"
+                               StrokeDashArray="1 2"
+                               SnapsToDevicePixels="true"
+                               StrokeThickness="1"
+                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Color x:Key="DefaultColorAdd">#40ff00</Color>
+    <SolidColorBrush x:Key="DefaultColorBrushAdd"
+                     Color="{StaticResource DefaultColorAdd}" />
+    <Color x:Key="FocusColorAdd">#39e300</Color>
+    <SolidColorBrush x:Key="FocusColorBrushAdd"
+                     Color="{StaticResource FocusColorAdd}" />
+    <Color x:Key="FocusBorderColorAdd">#33CC00</Color>
+    <SolidColorBrush x:Key="FocusBorderColorBrushAdd"
+                     Color="{StaticResource FocusBorderColorAdd}" />
+
+    <Style x:Key="AddBtn"
+           TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="FontWeight"
+                Value="DemiBold" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="FontSize"
+                Value="34" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultColorBrushAdd}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <!--<ContentPresenter x:Name="contentPresenter"
+                                      Content="+"
+                                      Focusable="False"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      Margin="0"
+                                      RecognizesAccessKey="True"
+                                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />-->
+
+                    <Viewbox Margin="{TemplateBinding Padding}">
+                        <Grid VerticalAlignment="Top">
+                            <Polygon x:Name="PlusIcon"
+                                     Points="0,19, 19,19, 19,0, 31,0, 31,19, 50,19, 50,31, 31,31, 31,50, 19,50, 19,31, 0,31"
+                                     Fill="{StaticResource DefaultColorBrushAdd}"
+                                     Stroke="{StaticResource FocusColorBrushAdd}"
+                                     StrokeThickness="2" />
+                        </Grid>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="PlusIcon"
+                                                    Storyboard.TargetProperty="Fill.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusColorAdd}" />
+                                    <ColorAnimation Storyboard.TargetName="PlusIcon"
+                                                    Storyboard.TargetProperty="Stroke.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusBorderColorAdd}" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="PlusIcon"
+                                                    Storyboard.TargetProperty="Fill.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource DefaultColorAdd}" />
+                                    <ColorAnimation Storyboard.TargetName="PlusIcon"
+                                                    Storyboard.TargetProperty="Stroke.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusColorAdd}" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Кнопка удаления-->
+    <Color x:Key="DefaultColorDelete">#ff0000</Color>
+    <SolidColorBrush x:Key="DefaultColorBrushDelete"
+                     Color="{StaticResource DefaultColorDelete}" />
+    <Color x:Key="FocusColorDelete">#b40000</Color>
+    <SolidColorBrush x:Key="FocusColorBrushDelete"
+                     Color="{StaticResource FocusColorDelete}" />
+    <Color x:Key="FocusBorderColorDelete">#970000</Color>
+    <SolidColorBrush x:Key="FocusBorderColorBrushDelete"
+                     Color="{StaticResource FocusBorderColorDelete}" />
+    <Color x:Key="NotEnabledColorDelete">#FF9090</Color>
+    <SolidColorBrush x:Key="NotEnabledColorBrushDelete"
+                     Color="{StaticResource NotEnabledColorDelete}" />
+    <Color x:Key="NotEnabledBorderColorDelete">#C36F6F</Color>
+    <SolidColorBrush x:Key="NotEnabledBorderColorBrushDelete"
+                     Color="{StaticResource NotEnabledBorderColorDelete}" />
+    <Style x:Key="Deletebtn"
+           TargetType="{x:Type Button}">
+        <Setter Property="FocusVisualStyle"
+                Value="{StaticResource FocusVisual}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Cursor"
+                Value="Hand" />
+        <Setter Property="FontSize"
+                Value="48" />
+        <Setter Property="Foreground"
+                Value="{StaticResource DefaultColorBrushDelete}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Viewbox Margin="{TemplateBinding Padding}">
+                        <Grid VerticalAlignment="Top">
+                            <Rectangle x:Name="MinusIcon"
+                                       Width="50"
+                                       Height="12"
+                                       Fill="{StaticResource DefaultColorBrushDelete}"
+                                       Stroke="{StaticResource FocusColorBrushDelete}" />
+                        </Grid>
+                    </Viewbox>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled"
+                                 Value="False">
+                            <Trigger.Setters>
+                                <Setter TargetName="MinusIcon"
+                                        Property="Fill"
+                                        Value="{StaticResource NotEnabledColorBrushDelete}" />
+                                <Setter TargetName="MinusIcon"
+                                        Property="Stroke"
+                                        Value="{StaticResource NotEnabledBorderColorBrushDelete}" />
+                            </Trigger.Setters>
+                        </Trigger>
+                        <!--<Trigger Property="IsEnabled"
+                                 Value="True">
+                            <Setter Property="ToolTip.IsEnabled"
+                                    Value="False" />
+                        </Trigger>-->
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="MinusIcon"
+                                                    Storyboard.TargetProperty="Fill.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusColorDelete}" />
+                                    <ColorAnimation Storyboard.TargetName="MinusIcon"
+                                                    Storyboard.TargetProperty="Stroke.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusBorderColorDelete}" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetName="MinusIcon"
+                                                    Storyboard.TargetProperty="Fill.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource DefaultColorDelete}" />
+                                    <ColorAnimation Storyboard.TargetName="MinusIcon"
+                                                    Storyboard.TargetProperty="Stroke.Color"
+                                                    Duration="0:0:0.25"
+                                                    To="{StaticResource FocusColorDelete}" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
     <!--#endregion-->
 </ResourceDictionary>

@@ -1,4 +1,5 @@
-﻿using PartyMaker_NET_Core.Models;
+﻿using PartyMaker_NET_Core.Commands.Base;
+using PartyMaker_NET_Core.Models;
 using PartyMaker_NET_Core.ViewModels.Base;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,24 @@ namespace PartyMaker_NET_Core.ViewModels
         #region Команды
         #region Добавление алкоголя
         public ICommand AddAlcoCommand { get; }
-        public bool CanAddAlcoCommandExecute(object p) => true;
-        public void OnAddAlcoCommandExecuted(object p)
+        private bool CanAddAlcoCommandExecute(object p) => AllAlco.Count <= 10;
+        private void OnAddAlcoCommandExecuted(object p) => AllAlco.Add(new Alco());
+        #endregion
+        #region Удаление выбранного алкоголя
+        public ICommand DeleteAlcoCommand { get; }
+        private bool CanDeleteAlcoCommandExecute(object p) => SelectedAlco != null;
+        private void OnDeleteAlcoCommandExecuted(object p)
         {
-            AllAlco.Add(new Alco());
+            if (AllAlco.Count != 1)
+            {
+                int nextSelect = AllAlco.IndexOf(SelectedAlco);
+                AllAlco.Remove(SelectedAlco);
+                if (nextSelect == AllAlco.Count)
+                    nextSelect--;
+                SelectedAlco = AllAlco[nextSelect];
+            }
+            else
+                AllAlco.Remove(SelectedAlco);
         }
         #endregion
         #endregion
@@ -33,15 +48,20 @@ namespace PartyMaker_NET_Core.ViewModels
         #endregion
         #region Выбранный айтем у DataGrid для удаления
         private Alco _selectedAlco;
-        public Alco SelectedAlco {
+        public Alco SelectedAlco
+        {
             get => _selectedAlco;
             set => Set(ref _selectedAlco, value);
         }
         #endregion
         #endregion
+
         public AdvancedPageViewModel()
         {
-
+            #region Инициализация комманд
+            AddAlcoCommand = new LambdaCommand(OnAddAlcoCommandExecuted, CanAddAlcoCommandExecute);
+            DeleteAlcoCommand = new LambdaCommand(OnDeleteAlcoCommandExecuted, CanDeleteAlcoCommandExecute);
+            #endregion
         }
     }
 }

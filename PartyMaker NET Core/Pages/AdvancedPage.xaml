@@ -26,7 +26,7 @@
                 <TextBlock Text="Крепкий алкоголь"
                            FontSize="18"
                            FontWeight="DemiBold"
-                           HorizontalAlignment="Center"/>
+                           HorizontalAlignment="Center" />
                 <DataGrid ItemsSource="{Binding AllAlco}"
                           AutoGenerateColumns="False"
                           CanUserAddRows="False"
@@ -34,20 +34,31 @@
                           CanUserReorderColumns="False"
                           HorizontalGridLinesBrush="#FFFF7700"
                           VerticalGridLinesBrush="#FFFF7700"
-                          AlternatingRowBackground="#fff4e7" SelectedItem="{Binding SelectedAlco}">
+                          AlternatingRowBackground="#fff4e7"
+                          SelectedItem="{Binding SelectedAlco}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Вид алкоголя" Binding="{Binding Title}" Width="3*"/>
-                        <DataGridTextColumn Header="Цена" Binding="{Binding Price, Converter={StaticResource Money}}" Width="2*"/>
+                        <DataGridTextColumn Header="Вид алкоголя"
+                                            Binding="{Binding Title}"
+                                            Width="3*" />
+                        <DataGridTextColumn Header="Цена"
+                                            Binding="{Binding PriceString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource Money}}"
+                                            Width="2*" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" />
+                    <Button Grid.Column="0"
+                            Style="{StaticResource AddBtn}"
+                            Command="{Binding AddAlcoCommand}"
+                            Padding="35, 5" />
                     <Button Grid.Column="1"
-                            Content="-" />
+                            Style="{StaticResource Deletebtn}"
+                            Command="{Binding DeleteAlcoCommand}"
+                            Padding="30, 5">
+                    </Button>
                 </Grid>
             </StackPanel>
             <Grid Grid.Column="1">
